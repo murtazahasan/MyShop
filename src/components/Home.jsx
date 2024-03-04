@@ -23,7 +23,7 @@ function Home() {
                   data-aos-duration="1200"
                   className="display-2 fw-bold text-body-emphasis lh-1 mb-3"
                 >
-                  Summer Collection.
+                  Winter Collection.
                 </h1>
                 <p data-aos="zoom-in" data-aos-duration="1500" className="lead">
                   Quickly design and customize responsive mobile-first sites
