@@ -665,7 +665,7 @@ function Men() {
               <NavLink
                 style={{ textDecoration: "none" }}
                 className="text-white"
-                target="_blank" 
+                // target="_blank" 
                 to="/WOMEN"
               >
                 WOMEN →

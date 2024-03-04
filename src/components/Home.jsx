@@ -105,7 +105,7 @@ function Home() {
                 <img src="wt3.jpg" className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">DILLINGER</h5>
-                  <p className="card-text">Women WHITE T-shirt</p>
+                  <p className="card-text">Women WHITE Shirt</p>
                   <p>
                     {" "}
                     <span className="fw-bold">Rs.999</span>{" "}
