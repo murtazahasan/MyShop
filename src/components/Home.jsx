@@ -127,7 +127,7 @@ function Home() {
                 <div className="card-body">
                   <h5 className="card-title">SEWCHELL</h5>
                   <p className="card-text">
-                    Vera Women's Cotton  Purse
+                    Vera  Cotton  Purse
                   </p>
                   <p>
                     {" "}
@@ -416,7 +416,7 @@ function Home() {
                 <img src="wb6.jpg" className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">JOSICQUE</h5>
-                  <p className="card-text">FAUX LEATHER TOTE BAG</p>
+                  <p className="card-text"> LEATHER TOTE BAG</p>
                   <p>
                     {" "}
                     <span className="fw-bold">Rs.999</span>{" "}

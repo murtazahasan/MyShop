@@ -139,7 +139,7 @@ function Men() {
                 <img src="mt4.jpg" className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">INVICTUS</h5>
-                  <p className="card-text">Opaque Cotton Formal Shirt</p>
+                  <p className="card-text">Opaque Formal Shirt</p>
                   <p>
                     {" "}
                     <span className="fw-bold">Rs.999</span>{" "}
@@ -283,7 +283,7 @@ function Men() {
                 <img src="mw2.jpg" className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">CASIO</h5>
-                  <p className="card-text">Men Vintage Digital Watch</p>
+                  <p className="card-text">Men Vintage  Watch</p>
                   <p>
                     {" "}
                     <span className="fw-bold">Rs.999</span>{" "}
@@ -627,7 +627,7 @@ function Men() {
                 <img src="ms8.jpg" className="card-img-top" alt="..." />
                 <div className="card-body">
                   <h5 className="card-title">Reebok</h5>
-                  <p className="card-text">Men antique Perforations wenokiat Shoes </p>
+                  <p className="card-text">Men antique Perforations  Shoes </p>
                   <p>
                     {" "}
                     <span className="fw-bold">Rs.999</span>{" "}
