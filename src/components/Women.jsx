@@ -685,8 +685,9 @@ function Women() {
               <NavLink
                 style={{ textDecoration: "none" }}
                 className="text-white"
-                target="_blank"
-                to="MEN"
+                // target="_blank"
+                onClick={() => window.scrollTo(0, 0)}
+                to="/MEN"
               >
                 MEN →
               </NavLink>

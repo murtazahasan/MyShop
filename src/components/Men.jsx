@@ -667,6 +667,7 @@ function Men() {
                 className="text-white"
                 // target="_blank" 
                 to="/WOMEN"
+                onClick={() => window.scrollTo(0, 0)}
               >
                 WOMEN →
               </NavLink>
