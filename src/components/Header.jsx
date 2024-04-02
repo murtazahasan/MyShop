@@ -9,7 +9,7 @@ import { Link, NavLink } from "react-router-dom";
 function Header() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div className="container-fluid">
           <NavLink className="navbar-brand" to="/">
             <img className=" rounded-5 ms-3 h-25 w-25" src="logo1.png" alt="" />

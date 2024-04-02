@@ -1,0 +1,67 @@
+[
+    {
+      "name": "Raymond",
+      "image": "mt1.jpg",
+      "description": "Pure Cotton Formal Shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "Roadster",
+      "image": "mt2.jpg",
+      "description": "Loose Fit COTTON T-shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "Cantabil",
+      "image": "mt3.jpg",
+      "description": "Slim Fit Formal Shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "INVICTUS",
+      "image": "mt4.jpg",
+      "description": "Opaque Formal Shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "H&M",
+      "image": "mt5.jpg",
+      "description": "Pure Cotton Regular Fit Tshirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "Maniac",
+      "image": "mt6.jpg",
+      "description": "Men Cotton Pure Cotton T-shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "BULLMER",
+      "image": "mt7.jpg",
+      "description": "Solid Round Neck T-shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "Huetrap",
+      "image": "mt8.jpg",
+      "description": "Pure Cotton Regular Fit Tshirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    }
+  ]
+  

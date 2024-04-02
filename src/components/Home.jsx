@@ -4,7 +4,7 @@ function Home() {
   return (
     <>
       <div
-        className="container-fluid"
+        className="container-fluid pt-5"
         style={{ backgroundImage: `url("bb1.jpg")` }}
       >
         <div className="container-fluid">

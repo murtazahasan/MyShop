@@ -1,0 +1,67 @@
+[
+    {
+      "name": "CLAFOUTIS",
+      "image": "wt1.jpg",
+      "description": "Women Scalloped Pure Cotton T-shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "Corner",
+      "image": "wt2.jpg",
+      "description": "Women Typography Printed T-shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "DILLINGER",
+      "image": "wt3.jpg",
+      "description": "Women WHITE T-shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "Kook N Keech",
+      "image": "wt4.jpg",
+      "description": "Varsity Printed T-shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "The Souled",
+      "image": "wt5.jpg",
+      "description": "Women Dyed Cotton T-shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "The Dry State",
+      "image": "wt6.jpg",
+      "description": "Varsity Printed T-shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "H&M",
+      "image": "wt7.jpg",
+      "description": "Women Typography",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "ZARA",
+      "image": "wt8.jpg",
+      "description": "Women SOLID T-shirt",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    }
+  ]
+  

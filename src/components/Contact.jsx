@@ -3,7 +3,7 @@ import React from "react";
 function Contact() {
   return (
     <>
-    <div className="container-fluid"  style={{ backgroundColor: "#f7fdff75" }}>
+    <div className="container-fluid pt-5"  style={{ backgroundColor: "#f7fdff75" }}>
 
       <div className="container pb-3">
         <div className="row py-5">

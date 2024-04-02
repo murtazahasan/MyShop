@@ -1,0 +1,67 @@
+[
+    {
+      "name": "SEWCHELL",
+      "image": "wb1.jpg",
+      "description": "FAUX LEATHER TOTE BAG",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "AMBRIGO",
+      "image": "wb2.jpg",
+      "description": "TWEED CROSSBODY BAG",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "VONICA",
+      "image": "wb3.jpg",
+      "description": "LEATHER SHOULDER BAG",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "SIWOC",
+      "image": "wb4.jpg",
+      "description": "The Drop Tracy Canvas Tote",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "EVVIMRO",
+      "image": "wb5.jpg",
+      "description": "The Drop Tracy Large Canvas Detail Straw Tote",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "JOSICQUE",
+      "image": "wb6.jpg",
+      "description": "Women's Greenwald Crossbody Bag",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "RIORA",
+      "image": "wb7.jpg",
+      "description": "Vera Women's Cotton Purse",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "HAMQUTE",
+      "image": "wb8.jpg",
+      "description": "The Sak De Young BLACK",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    }
+  ]
+  

@@ -3,7 +3,7 @@ import React from "react";
 function About() {
   return (
     <>
-      <div className="container-fluid pb-2" style={{ backgroundColor: "#faeeff54" }}>
+      <div className="container-fluid pt-5 pb-2" style={{ backgroundColor: "#faeeff54" }}>
         <div className="px-4 py-5 text-center">
           <h1 className="display-3 fw-bold text-body-emphasis">A<span className="border-bottom border-2 py-1 border-dark ">bou</span>t</h1>
           <div className="col-lg-6 mx-auto">

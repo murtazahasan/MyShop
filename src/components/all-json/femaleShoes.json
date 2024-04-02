@@ -1,0 +1,67 @@
+[
+    {
+      "name": "Brauch",
+      "image": "ws1.jpg",
+      "description": "Embellished Block Heels",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "NEEMANS",
+      "image": "ws2.jpg",
+      "description": "Solid Block BOOTS",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "AXIUM",
+      "image": "ws3.jpg",
+      "description": "Embellished Kitten Heels",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "Puma",
+      "image": "ws4.jpg",
+      "description": "Women blocked Sneakers",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "Marc Loire",
+      "image": "ws5.jpg",
+      "description": "Woven Design Wedge Heel",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "Denill",
+      "image": "ws6.jpg",
+      "description": "Women sevenou Sneakers",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "Shoetopia",
+      "image": "ws7.jpg",
+      "description": "Women Pumps",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    },
+    {
+      "name": "El Paso",
+      "image": "ws8.jpg",
+      "description": "Women Sneakers",
+      "price": 999,
+      "discountedPrice": 1999,
+      "discount": 50
+    }
+  ]
+  
