@@ -1,0 +1,67 @@
+[
+    {
+      "imgSrc": "mt1.jpg",
+      "title": "Raymond",
+      "description": "Pure Cotton Formal Shirt",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "mw1.jpg",
+      "title": "CASIO",
+      "description": "Men Vintage Digital Watch",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "wt3.jpg",
+      "title": "DILLINGER",
+      "description": "Women WHITE Shirt",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "wb4.jpg",
+      "title": "SEWCHELL",
+      "description": "Vera  Cotton  Purse",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "ms1.jpg",
+      "title": "PUMA",
+      "description": "Men White Leather Sneakers",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "ws3.jpg",
+      "title": "AXIUM",
+      "description": "Embellished Kitten Heels",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "wb6.jpg",
+      "title": "AMBRIGO",
+      "description": "Women's Greenwald Bag",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "mw2.jpg",
+      "title": "CASIO",
+      "description": "Men Vintage Digital Watch",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    }
+  ]
+  

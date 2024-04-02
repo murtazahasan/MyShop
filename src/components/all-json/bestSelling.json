@@ -1,0 +1,67 @@
+[
+    {
+      "imgSrc": "mw7.jpg",
+      "title": "pebble",
+      "description": "Color Fit 2 Smartwatch",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "wb3.jpg",
+      "title": "VONICA",
+      "description": "LEATHER SHOULDER BAG",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "mt8.jpg",
+      "title": "Huetrap",
+      "description": "Pure Cotton Regular Fit Tshirt",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "ms4.jpg",
+      "title": "Campus",
+      "description": "Men Mesh Walking Shoes",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "wb6.jpg",
+      "title": "JOSICQUE",
+      "description": "LEATHER TOTE BAG",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "mw1.jpg",
+      "title": "Titan",
+      "description": "Men Analogue Watch",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "ws3.jpg",
+      "title": "AXIUM",
+      "description": "Embellished Kitten Heels",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    },
+    {
+      "imgSrc": "ms1.jpg",
+      "title": "Puma",
+      "description": "Men White Leather Sneakers",
+      "price": "Rs.999",
+      "discountedPrice": "Rs.1999",
+      "discount": "(50% OFF)"
+    }
+  ]
+  

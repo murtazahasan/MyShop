@@ -1,4 +1,6 @@
 import React from "react";
+import featuredData from './all-json/featured.json';
+import productsData from './all-json/bestSelling.json';
 
 function Home() {
   return (
@@ -12,7 +14,7 @@ function Home() {
             <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
               <div className="col-10  col-sm-8 col-lg-6">
                 <img
-                  src="b.png"
+                  src="bssize.png"
                   className="d-block mx-lg-auto  img-fluid "
                   alt="Home Picture"
                 />
@@ -45,196 +47,38 @@ function Home() {
         </div>
       </div>
 
-      <div
-        className="container-fluid py-5"
-        style={{ backgroundColor: "#eaeaea9e" }}
+      <div className="container-fluid py-5" style={{ backgroundColor: "#eaeaea9e" }}>
+      <h1
+        data-aos="zoom-in-up"
+        data-aos-duration="1500"
+        className="fw-bolder fs-1 py-2 border-bottom border-2 text-center"
       >
-        <h1
-          data-aos="zoom-in-up"
-          data-aos-duration="1500"
-          className="fw-bolder fs-1 py-2 border-bottom border-2 text-center"
-        >
-          Featured Products
-        </h1>
-        <div className="container py-5">
-          <div className="row">
-            <div className="col-md-3 col-6">
+        Featured Products
+      </h1>
+      <div className="container py-5">
+        <div className="row">
+          {featuredData.map((product, index) => (
+            <div key={index} className="col-md-3 col-6">
               <div className="card mb-3">
-                <img src="mt1.jpg" className="card-img-top" alt="..." />
+                <img src={product.imgSrc} className="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h5 className="card-title">Raymond</h5>
-                  <p className="card-text">Pure Cotton Formal Shirt</p>
+                  <h5 className="card-title">{product.title}</h5>
+                  <p className="card-text">{product.description}</p>
                   <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
+                    <span className="fw-bold">{product.price}</span>{" "}
+                    <span style={{ textDecoration: "line-through" }}>{product.discountedPrice}</span>{" "}
+                    <span style={{ color: "#b84444" }}>{product.discount}</span>
                   </p>
-
                   <a href="#" className="btn btn-dark">
                     Shop Now
                   </a>
                 </div>
               </div>
             </div>
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="mw1.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">CASIO</h5>
-                  <p className="card-text">Men Vintage Digital Watch</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="wt3.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">DILLINGER</h5>
-                  <p className="card-text">Women WHITE Shirt</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="wb4.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">SEWCHELL</h5>
-                  <p className="card-text">
-                    Vera  Cotton  Purse
-                  </p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="ms1.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">PUMA</h5>
-                  <p className="card-text">Men White Leather Sneakers</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="ws3.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">AXIUM</h5>
-                  <p className="card-text">Embellished Kitten Heels</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="wb6.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">AMBRIGO</h5>
-                  <p className="card-text">Women's Greenwald Bag</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="mw2.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">CASIO</h5>
-                  <p className="card-text">Men Vintage Digital Watch</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
+    </div>
 
       <div
         className="container-fluid py-5"
@@ -311,193 +155,37 @@ function Home() {
         </div>
       </div>
 
-      <div
-        className="container-fluid py-5"
-        style={{ backgroundColor: "#eaeaea9e" }}
-      >
-        <h1 
-        data-aos="zoom-in-up"
-        data-aos-duration="1500"
-        className="fw-bolder fs-1 py-2 border-bottom border-2 text-center">
-          Best Selling Product
-        </h1>
-        <div className="container py-5">
-          <div className="row">
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="mw7.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">pebble</h5>
-                  <p className="card-text">Color Fit 2 Smartwatch</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="wb3.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">VONICA</h5>
-                  <p className="card-text">LEATHER SHOULDER BAG</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="mt8.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">Huetrap</h5>
-                  <p className="card-text">Pure Cotton Regular Fit Tshirt</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="ms4.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">Campus</h5>
-                  <p className="card-text">Men Mesh Walking Shoes</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
+      <div className="container-fluid py-5" style={{ backgroundColor: "#eaeaea9e" }}>
+  <h1 
+    data-aos="zoom-in-up"
+    data-aos-duration="1500"
+    className="fw-bolder fs-1 py-2 border-bottom border-2 text-center"
+  >
+    Best Selling Product
+  </h1>
+  <div className="container py-5">
+    <div className="row">
+      {productsData.map((product, index) => (
+        <div className="col-md-3 col-6" key={index}>
+          <div className="card mb-3">
+            <img src={product.imgSrc} className="card-img-top" alt="..." />
+            <div className="card-body">
+              <h5 className="card-title">{product.title}</h5>
+              <p className="card-text">{product.description}</p>
+              <p>
+                <span className="fw-bold">{product.price}</span>{" "}
+                <span style={{ textDecoration: "line-through" }}>{product.discountedPrice}</span>{" "}
+                <span style={{ color: "#b84444" }}>{product.discount}</span>
+              </p>
+              <a href="#" className="btn btn-dark">Shop Now</a>
             </div>
           </div>
         </div>
-        <div className="container">
-          <div className="row">
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="wb6.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">JOSICQUE</h5>
-                  <p className="card-text"> LEATHER TOTE BAG</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
+      ))}
+    </div>
+  </div>
+</div>
 
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="mw1.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">Titan</h5>
-                  <p className="card-text">Men Analogue Watch</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="ws3.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">AXIUM</h5>
-                  <p className="card-text">Embellished Kitten Heels</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src="ms1.jpg" className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">Puma</h5>
-                  <p className="card-text">Men White Leather Sneakers</p>
-                  <p>
-                    {" "}
-                    <span className="fw-bold">Rs.999</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>
-                      Rs.1999
-                    </span>{" "}
-                    <span style={{ color: "#b84444" }}> (50% OFF) </span>
-                  </p>
-
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       <div
         className="container-fluid py-5"
