@@ -6,5 +6,20 @@ import About from "./About";
 import Contact from "./Contact";
 import Bag from "./Bag";
 import Footer from "./Footer";
+import Signup from "./Signup";
+import CartSection from "./CartSection";
+import CartBox from "./CartBox";
 
-export { Header, Home, Men, Women, About, Contact, Bag, Footer };
+export {
+  Header,
+  Home,
+  Men,
+  Women,
+  About,
+  Contact,
+  Signup,
+  Bag,
+  CartBox,
+  CartSection,
+  Footer,
+};

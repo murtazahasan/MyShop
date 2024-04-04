@@ -17,6 +17,8 @@ import {
   Women,
   About,
   Contact,
+  Signup,
+  CartSection,
   Bag,
   Footer,
 } from "./components/index";
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
       {
         path: "Contact",
         element: <Contact />,
+      },
+      {
+        path: "sign-up",
+        element: <Signup />,
+      },
+      {
+        path: "my-cart",
+        element: <CartSection />,
       },
     ],
   },

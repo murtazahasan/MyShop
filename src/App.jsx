@@ -7,6 +7,8 @@ import {
   Women,
   About,
   Contact,
+  CartBox,
+  CartSection,
   Bag,
   Footer,
 } from "./components/index";
@@ -22,7 +24,8 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header />  
+      <CartBox />
       <Outlet />
       <Footer />
     </>

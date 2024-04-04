@@ -1,10 +1,35 @@
 import React from "react";
-import featuredData from './all-json/featured.json';
-import productsData from './all-json/bestSelling.json';
+import featuredData from "./all-json/featured.json";
+import productsData from "./all-json/bestSelling.json";
+import { useNavigate } from "react-router-dom";
 
 function Home() {
+  const navigate = useNavigate();
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const handleMenButtonClick = () => {
+    navigate('/MEN');
+    scrollToTop();
+  };
+
+  const handleWomenButtonClick = () => {
+    navigate('/WOMEN');
+    scrollToTop();
+  };
+
+  const handleAboutButtonClick = () => {
+    navigate('/ABOUT');
+    scrollToTop();
+  };
   return (
     <>
+      {/* 1 */}
       <div
         className="container-fluid pt-5"
         style={{ backgroundImage: `url("bb1.jpg")` }}
@@ -47,39 +72,52 @@ function Home() {
         </div>
       </div>
 
-      <div className="container-fluid py-5" style={{ backgroundColor: "#eaeaea9e" }}>
-      <h1
-        data-aos="zoom-in-up"
-        data-aos-duration="1500"
-        className="fw-bolder fs-1 py-2 border-bottom border-2 text-center"
+      {/* Featured Products  */}
+      <div
+        className="container-fluid py-5"
+        style={{ backgroundColor: "#eaeaea9e" }}
       >
-        Featured Products
-      </h1>
-      <div className="container py-5">
-        <div className="row">
-          {featuredData.map((product, index) => (
-            <div key={index} className="col-md-3 col-6">
-              <div className="card mb-3">
-                <img src={product.imgSrc} className="card-img-top" alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">{product.title}</h5>
-                  <p className="card-text">{product.description}</p>
-                  <p>
-                    <span className="fw-bold">{product.price}</span>{" "}
-                    <span style={{ textDecoration: "line-through" }}>{product.discountedPrice}</span>{" "}
-                    <span style={{ color: "#b84444" }}>{product.discount}</span>
-                  </p>
-                  <a href="#" className="btn btn-dark">
-                    Shop Now
-                  </a>
+        <h1
+          data-aos="zoom-in-up"
+          data-aos-duration="1500"
+          className="fw-bolder fs-1 py-2 border-bottom border-2 text-center"
+        >
+          Featured Products
+        </h1>
+        <div className="container py-5">
+          <div className="row">
+            {featuredData.map((product, index) => (
+              <div key={index} className="col-md-3 col-6">
+                <div className="card mb-3">
+                  <img
+                    src={product.imgSrc}
+                    className="card-img-top"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.title}</h5>
+                    <p className="card-text">{product.description}</p>
+                    <p>
+                      <span className="fw-bold">{product.price}</span>{" "}
+                      <span style={{ textDecoration: "line-through" }}>
+                        {product.discountedPrice}
+                      </span>{" "}
+                      <span style={{ color: "#b84444" }}>
+                        {product.discount}
+                      </span>
+                    </p>
+                    <a href="#" className="btn btn-dark">
+                      Shop Now
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
 
+      {/* jumbotron */}
       <div
         className="container-fluid py-5"
         style={{ backgroundColor: "#eaeaea73" }}
@@ -90,10 +128,12 @@ function Home() {
             style={{ backgroundImage: `url( "j1.jpg" )` }}
           >
             <div className="container-fluid py-5">
-              <h1 
-              data-aos="zoom-in"
-              data-aos-duration="1500"
-              className="display-5 text-white fw-bold">Men’s Fashion Finds
+              <h1
+                data-aos="zoom-in"
+                data-aos-duration="1500"
+                className="display-5 text-white fw-bold"
+              >
+                Men’s Fashion Finds
               </h1>
               <p className="col-md-8 text-white fs-4">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
@@ -101,10 +141,13 @@ function Home() {
                 Maxime, officia vero.
               </p>
               <button
-              data-aos="zoom-in"
-              data-aos-duration="1500"
-              className="btn btn-dark btn-lg" type="button">
-              Find More
+                data-aos="zoom-in"
+                data-aos-duration="1500"
+                className="btn btn-dark btn-lg"
+                type="button"
+                onClick={handleMenButtonClick}
+              >
+                Find More
               </button>
             </div>
           </div>
@@ -115,19 +158,26 @@ function Home() {
                 className="h-100 p-5  rounded-3"
                 style={{ backgroundImage: `url( "j2.jpg" )` }}
               >
-                <h2 
-                data-aos="zoom-in-down"
-                data-aos-duration="1000"
-                className="fw-bold">Women’s Fashion Picks
+                <h2
+                  data-aos="zoom-in-down"
+                  data-aos-duration="1000"
+                  className="fw-bold"
+                >
+                  Women’s Fashion Picks
                 </h2>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam molestias voluptas, culpa quos saepe officiis dolorem dolorum.
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Quisquam molestias voluptas, culpa quos saepe officiis dolorem
+                  dolorum.
                 </p>
-                <button 
-                data-aos="zoom-in"
-                data-aos-duration="1200"
-                className="btn btn-dark" type="button">
-                Find More
+                <button
+                  data-aos="zoom-in"
+                  data-aos-duration="1200"
+                  className="btn btn-dark"
+                  type="button"
+                  onClick={handleWomenButtonClick}
+                >
+                  Find More
                 </button>
               </div>
             </div>
@@ -136,17 +186,25 @@ function Home() {
                 className="h-100 p-5 bg-body-tertiary text-white border rounded-3"
                 style={{ backgroundImage: `url( "j3.jpg" )` }}
               >
-                <h2 
-                data-aos="zoom-in-up"
-                data-aos-duration="1500"
-                className="fw-bold">Our Story</h2>
+                <h2
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1500"
+                  className="fw-bold"
+                >
+                  Our Story
+                </h2>
                 <p>
-                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt asperiores natus, quos cum dolorum animi voluptatum assumenda.
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Incidunt asperiores natus, quos cum dolorum animi voluptatum
+                  assumenda.
                 </p>
                 <button
-                data-aos="zoom-in"
-                data-aos-duration="1000"
-                className="btn  btn-dark" type="button">
+                  data-aos="zoom-in"
+                  data-aos-duration="1000"
+                  className="btn  btn-dark"
+                  type="button"
+                  onClick={handleAboutButtonClick}
+                >
                   Find More
                 </button>
               </div>
@@ -155,38 +213,52 @@ function Home() {
         </div>
       </div>
 
-      <div className="container-fluid py-5" style={{ backgroundColor: "#eaeaea9e" }}>
-  <h1 
-    data-aos="zoom-in-up"
-    data-aos-duration="1500"
-    className="fw-bolder fs-1 py-2 border-bottom border-2 text-center"
-  >
-    Best Selling Product
-  </h1>
-  <div className="container py-5">
-    <div className="row">
-      {productsData.map((product, index) => (
-        <div className="col-md-3 col-6" key={index}>
-          <div className="card mb-3">
-            <img src={product.imgSrc} className="card-img-top" alt="..." />
-            <div className="card-body">
-              <h5 className="card-title">{product.title}</h5>
-              <p className="card-text">{product.description}</p>
-              <p>
-                <span className="fw-bold">{product.price}</span>{" "}
-                <span style={{ textDecoration: "line-through" }}>{product.discountedPrice}</span>{" "}
-                <span style={{ color: "#b84444" }}>{product.discount}</span>
-              </p>
-              <a href="#" className="btn btn-dark">Shop Now</a>
-            </div>
+      {/* Best Selling Product */}
+      <div
+        className="container-fluid py-5"
+        style={{ backgroundColor: "#eaeaea9e" }}
+      >
+        <h1
+          data-aos="zoom-in-up"
+          data-aos-duration="1500"
+          className="fw-bolder fs-1 py-2 border-bottom border-2 text-center"
+        >
+          Best Selling Product
+        </h1>
+        <div className="container py-5">
+          <div className="row">
+            {productsData.map((product, index) => (
+              <div className="col-md-3 col-6" key={index}>
+                <div className="card mb-3">
+                  <img
+                    src={product.imgSrc}
+                    className="card-img-top"
+                    alt="..."
+                  />
+                  <div className="card-body">
+                    <h5 className="card-title">{product.title}</h5>
+                    <p className="card-text">{product.description}</p>
+                    <p>
+                      <span className="fw-bold">{product.price}</span>{" "}
+                      <span style={{ textDecoration: "line-through" }}>
+                        {product.discountedPrice}
+                      </span>{" "}
+                      <span style={{ color: "#b84444" }}>
+                        {product.discount}
+                      </span>
+                    </p>
+                    <a href="#" className="btn btn-dark">
+                      Shop Now
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
+      </div>
 
-
+      {/* appstore */}
       <div
         className="container-fluid py-5"
         style={{ backgroundColor: "#eaeaea73" }}
@@ -200,10 +272,11 @@ function Home() {
               Get Started with our app
             </h1>
             <div className="col-lg-6 mx-auto">
-              <p 
-              data-aos="zoom-in-up"
-              data-aos-duration="1500"
-              className="lead mb-4">
+              <p
+                data-aos="zoom-in-up"
+                data-aos-duration="1500"
+                className="lead mb-4"
+              >
                 SALE UP TO 70% OFF FOR ALL CLOTHES & FASHION ITEMS, ON ALL
                 BRANDS.
               </p>
