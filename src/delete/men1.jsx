@@ -1,105 +1,103 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import shirtData from "./all-json/shirts.json";
 import watchData from "./all-json/watches.json";
 import shoeData from "./all-json/shoes.json";
-import { addToBag, removeFromBag } from "../store/toBag";
-import { AiFillDelete } from "react-icons/ai";
-import { GrAddCircle } from "react-icons/gr";
 
-const ProductCard = ({
-  id,
+// ShirtCard
+const ShirtCard = ({
   name,
   image,
   description,
   price,
   discountedPrice,
   discount,
-  type,
-}) => {
-  const dispatch = useDispatch();
-  const inBag = useSelector((state) =>
-    state.toBag.items.find((item) => item.id === id)
-  );
-  const navigate = useNavigate();
-
-  const handleAddToBag = () => {
-    dispatch(
-      addToBag({
-        id,
-        name,
-        image,
-        description,
-        discountedPrice,
-        discount,
-        price,
-        type,
-      })
-    );
-  };
-
-  const handleRemoveFromBag = () => {
-    dispatch(removeFromBag(id));
-  };
-
-  const handleProductClick = () => {
-    navigate(`/product/${id}`);
-  };
-
-  return (
-    <div className="col-md-3 col-6">
-      <div className="card mb-3">
-        <img src={image} className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <p className="card-text">{description}</p>
-          <p>
-            <span className="fw-bold">Rs.{price}</span>{" "}
-            <span style={{ textDecoration: "line-through" }}>
-              Rs.{discountedPrice}
-            </span>{" "}
-            <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
-          </p>
-          {inBag ? (
-            <button onClick={handleRemoveFromBag} className="btn btn-danger">
-              Remove from Cart <AiFillDelete className="mb-1" />
-            </button>
-          ) : (
-            <button onClick={handleAddToBag} className="btn btn-success">
-              Add to Cart <GrAddCircle className="mb-1" />
-            </button>
-          )}
-          <button
-            onClick={handleProductClick}
-            className="btn btn-primary my-2 m-lg-2"
-          >
-            View Details
-          </button>
-        </div>
+}) => (
+  <div className="col-md-3 col-6">
+    <div className="card mb-3">
+      <img src={image} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{name}</h5>
+        <p className="card-text">{description}</p>
+        <p>
+          <span className="fw-bold">Rs.{price}</span>{" "}
+          <span style={{ textDecoration: "line-through" }}>
+            Rs.{discountedPrice}
+          </span>{" "}
+          <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
+        </p>
+        <a href="#" className="btn btn-dark">
+          Shop Now
+        </a>
       </div>
     </div>
-  );
-};
+  </div>
+);
+
+// WatchCard
+const WatchCard = ({
+  name,
+  image,
+  description,
+  price,
+  discountedPrice,
+  discount,
+}) => (
+  <div className="col-md-3 col-6">
+    <div className="card mb-3">
+      <img src={image} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{name}</h5>
+        <p className="card-text">{description}</p>
+        <p>
+          <span className="fw-bold">Rs.{price}</span>{" "}
+          <span style={{ textDecoration: "line-through" }}>
+            Rs.{discountedPrice}
+          </span>{" "}
+          <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
+        </p>
+        <a href="#" className="btn btn-dark">
+          Shop Now
+        </a>
+      </div>
+    </div>
+  </div>
+);
+
+// ShoeCard
+const ShoeCard = ({
+  name,
+  image,
+  description,
+  price,
+  discountedPrice,
+  discount,
+}) => (
+  <div className="col-md-3 col-6">
+    <div className="card mb-3">
+      <img src={image} className="card-img-top" alt="..." />
+      <div className="card-body">
+        <h5 className="card-title">{name}</h5>
+        <p className="card-text">{description}</p>
+        <p>
+          <span className="fw-bold">Rs.{price}</span>{" "}
+          <span style={{ textDecoration: "line-through" }}>
+            Rs.{discountedPrice}
+          </span>{" "}
+          <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
+        </p>
+        <a href="#" className="btn btn-dark">
+          Shop Now
+        </a>
+      </div>
+    </div>
+  </div>
+);
 
 function Men() {
-  const navigate = useNavigate();
-
-  const handleMenButtonClick = () => {
-    navigate("/MEN");
-    scrollToTop();
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <>
-      {/* Your Carousel Code */}
+      {/* carousel  */}
       <div
         id="carouselExampleAutoplaying"
         className="carousel slide pt-5"
@@ -157,12 +155,18 @@ function Men() {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-
       {/* ShirtCard */}
       <div
         className="container-fluid py-5"
         style={{ backgroundColor: "#eaeaea9e" }}
       >
+        <h1
+          data-aos="zoom-in-up"
+          data-aos-duration="1500"
+          className="fw-bolder fs-1 py-2 border-bottom border-2 text-center"
+        >
+          Gentlemen’s Corner: Explore Men’s Styles
+        </h1>
         <div className="container py-5">
           <h1
             data-aos="zoom-in"
@@ -173,12 +177,11 @@ function Men() {
           </h1>
           <div className="row">
             {shirtData.map((product, index) => (
-              <ProductCard key={index} {...product} type="shirt" />
+              <ShirtCard key={index} {...product} />
             ))}
           </div>
         </div>
       </div>
-
       {/* WatchCard */}
       <div
         className="container-fluid py-4"
@@ -190,17 +193,16 @@ function Men() {
             data-aos-duration="1500"
             className="fw-bolder py-3"
           >
-            Analog Watches
+            Premium Watches
           </h1>
           <div className="row">
-            {watchData.map((product, index) => (
-              <ProductCard key={index} {...product} type="watch" />
+            {watchData.map((watch, index) => (
+              <WatchCard key={index} {...watch} />
             ))}
           </div>
         </div>
       </div>
-
-      {/* Special Edition Section */}
+      {/* Special Edition */}
       <div
         className="container-fluid"
         style={{ backgroundImage: `url("aa2.jpg")` }}
@@ -231,7 +233,6 @@ function Men() {
           </div>
         </div>
       </div>
-
       {/* ShoeCard */}
       <div
         className="container-fluid py-5"
@@ -243,11 +244,11 @@ function Men() {
             data-aos-duration="1500"
             className="fw-bolder border-bottom py-3"
           >
-            Exquisite Smart Watches
+            Premium Shoes
           </h1>
           <div className="row">
-            {shoeData.map((product, index) => (
-              <ProductCard key={index} {...product} type="watch" />
+            {shoeData.map((shoe, index) => (
+              <ShoeCard key={index} {...shoe} />
             ))}
           </div>
         </div>
@@ -262,7 +263,6 @@ function Men() {
                   style={{ textDecoration: "none" }}
                   className="text-dark"
                   to="/"
-                  onClick={() => window.scrollTo(0, 0)}
                 >
                   ← HOME
                 </NavLink>
@@ -274,6 +274,7 @@ function Men() {
                 <NavLink
                   style={{ textDecoration: "none" }}
                   className="text-white"
+                  // target="_blank"
                   to="/WOMEN"
                   onClick={() => window.scrollTo(0, 0)}
                 >

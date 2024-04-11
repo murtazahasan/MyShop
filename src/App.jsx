@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-      <Header />  
+      <Header />
       <CartBox />
       <Outlet />
       <Footer />

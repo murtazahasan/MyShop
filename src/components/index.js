@@ -9,6 +9,7 @@ import Footer from "./Footer";
 import Signup from "./Signup";
 import CartSection from "./CartSection";
 import CartBox from "./CartBox";
+import ProductDetail from "./ProductDetail";
 
 export {
   Header,
@@ -21,5 +22,6 @@ export {
   Bag,
   CartBox,
   CartSection,
+  ProductDetail,
   Footer,
 };

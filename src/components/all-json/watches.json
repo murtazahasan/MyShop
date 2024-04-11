@@ -1,67 +1,74 @@
 [
-    {
-      "name": "pebble",
-      "image": "mw1.jpg",
-      "description": "Men Analogue Watch",
-      "price": 999,
-      "discountedPrice": 1999,
-      "discount": 50
-    },
-    {
-      "name": "CASIO",
-      "image": "mw2.jpg",
-      "description": "Men Vintage  Watch",
-      "price": 999,
-      "discountedPrice": 1999,
-      "discount": 50
-    },
-    {
-      "name": "Roadster",
-      "image": "mw3.jpg",
-      "description": "Men Analogue Watch",
-      "price": 999,
-      "discountedPrice": 1999,
-      "discount": 50
-    },
-    {
-      "name": "Titan",
-      "image": "mw4.jpg",
-      "description": "Men Analogue Watch",
-      "price": 999,
-      "discountedPrice": 1999,
-      "discount": 50
-    },
-    {
-      "name": "MENORA",
-      "image": "mw5.jpg",
-      "description": "Men Analogue Watch",
-      "price": 999,
-      "discountedPrice": 1999,
-      "discount": 50
-    },
-    {
-      "name": "Sonata",
-      "image": "mw6.jpg",
-      "description": "Men Analogue Watch",
-      "price": 999,
-      "discountedPrice": 1999,
-      "discount": 50
-    },
-    {
-      "name": "pebble",
-      "image": "mw7.jpg",
-      "description": "Color Fit 2 Smartwatch",
-      "price": 999,
-      "discountedPrice": 1999,
-      "discount": 50
-    },
-    {
-      "name": "Timex",
-      "image": "mw8.jpg",
-      "description": "Men Leather Straps Watch",
-      "price": 999,
-      "discountedPrice": 1999,
-      "discount": 50
-    }
-  ]
-  
+  {
+    "id": 9,
+    "name": "pebble",
+    "image": "mw1.jpg",
+    "description": "Men Analogue Watch",
+    "price": 1999,
+    "discountedPrice": 999,
+    "discount": 50
+  },
+  {
+    "id": 10,
+    "name": "CASIO",
+    "image": "mw2.jpg",
+    "description": "Men Vintage Watch",
+    "price": 1999,
+    "discountedPrice": 999,
+    "discount": 50
+  },
+  {
+    "id": 11,
+    "name": "Roadster",
+    "image": "mw3.jpg",
+    "description": "Men Analogue Watch",
+    "price": 1999,
+    "discountedPrice": 999,
+    "discount": 50
+  },
+  {
+    "id": 12,
+    "name": "Titan",
+    "image": "mw4.jpg",
+    "description": "Men Analogue Watch",
+    "price": 1999,
+    "discountedPrice": 999,
+    "discount": 50
+  },
+  {
+    "id": 13,
+    "name": "MENORA",
+    "image": "mw5.jpg",
+    "description": "Men Analogue Watch",
+    "price": 1999,
+    "discountedPrice": 999,
+    "discount": 50
+  },
+  {
+    "id": 14,
+    "name": "Sonata",
+    "image": "mw6.jpg",
+    "description": "Men Analogue Watch",
+    "price": 1999,
+    "discountedPrice": 999,
+    "discount": 50
+  },
+  {
+    "id": 15,
+    "name": "pebble",
+    "image": "mw7.jpg",
+    "description": "Color Fit 2 Smartwatch",
+    "price": 1999,
+    "discountedPrice": 999,
+    "discount": 50
+  },
+  {
+    "id": 16,
+    "name": "Timex",
+    "image": "mw8.jpg",
+    "description": "Men Leather Straps Watch",
+    "price": 1999,
+    "discountedPrice": 999,
+    "discount": 50
+  }
+]

@@ -1,107 +1,102 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import femaleShirts from "./all-json/femaleShirts.json";
-import femaleBags from "./all-json/femaleBags.json";
-import femaleShoes from "./all-json/femaleShoes.json";
+import { useDispatch, useSelector } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
+import shirtData from "./all-json/femaleShirts.json";
+import bagData from "./all-json/femaleBags.json";
+import shoeData from "./all-json/femaleShoes.json";
+import { addToBag, removeFromBag } from "../store/toBag";
+import { AiFillDelete } from "react-icons/ai";
+import { GrAddCircle } from "react-icons/gr";
 
-// femaleShirts
-const ShirtCard = ({
+const ProductCard = ({
+  id,
   name,
   image,
   description,
   price,
   discountedPrice,
   discount,
-}) => (
-  <div className="col-md-3 col-6">
-    <div className="card mb-3">
-      <img src={image} className="card-img-top" alt="..." />
-      <div className="card-body">
-        <h5 className="card-title">{name}</h5>
-        <p className="card-text">{description}</p>
-        <p>
-          <span className="fw-bold">Rs.{price}</span>{" "}
-          <span style={{ textDecoration: "line-through" }}>
-            Rs.{discountedPrice}
-          </span>{" "}
-          <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
-        </p>
-        <a href="#" className="btn btn-dark">
-          Shop Now
-        </a>
-      </div>
-    </div>
-  </div>
-);
+  category,
+}) => {
+  const dispatch = useDispatch();
+  const inBag = useSelector((state) =>
+    state.toBag.items.find((item) => item.id === id)
+  );
+  const navigate = useNavigate();
 
-// femaleBags
-const BagCard = ({
-  name,
-  image,
-  description,
-  price,
-  discountedPrice,
-  discount,
-}) => (
-  <div className="col-md-3 col-6">
-    <div className="card mb-3">
-      <img src={image} className="card-img-top" alt="..." />
-      <div className="card-body">
-        <h5 className="card-title">{name}</h5>
-        <p className="card-text">{description}</p>
-        <p>
-          <span className="fw-bold">Rs.{price}</span>{" "}
-          <span style={{ textDecoration: "line-through" }}>
-            Rs.{discountedPrice}
-          </span>{" "}
-          <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
-        </p>
-        <a href="#" className="btn btn-dark">
-          Shop Now
-        </a>
-      </div>
-    </div>
-  </div>
-);
+  const handleAddToBag = (e) => {
+    e.stopPropagation(); // Prevent event propagation
+    dispatch(
+      addToBag({
+        id,
+        name,
+        image,
+        description,
+        discountedPrice,
+        discount,
+        price,
+      })
+    );
+  };
 
-// femaleShoes
-const ShoeCard = ({
-  name,
-  image,
-  description,
-  price,
-  discountedPrice,
-  discount,
-}) => (
-  <div className="col-md-3 col-6">
-    <div className="card mb-3">
-      <img src={image} className="card-img-top" alt="..." />
-      <div className="card-body">
-        <h5 className="card-title">{name}</h5>
-        <p className="card-text">{description}</p>
-        <p>
-          <span className="fw-bold">Rs.{price}</span>{" "}
-          <span style={{ textDecoration: "line-through" }}>
-            Rs.{discountedPrice}
-          </span>{" "}
-          <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
-        </p>
-        <a href="#" className="btn btn-dark">
-          Shop Now
-        </a>
+  const handleRemoveFromBag = (e) => {
+    e.stopPropagation(); // Prevent event propagation
+    dispatch(removeFromBag(id));
+  };
+
+  const handleProductClick = () => {
+    navigate(`/product/${id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <div className="col-md-3 col-6">
+      <div
+        className="card mb-3"
+        style={{ cursor: "pointer" }}
+        onClick={handleProductClick}
+      >
+        <img src={image} className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">{name}</h5>
+          <p className="card-text">{description}</p>
+          <p>
+            <span className="fw-bold">Rs.{price}</span>{" "}
+            <span style={{ textDecoration: "line-through" }}>
+              Rs.{discountedPrice}
+            </span>{" "}
+            <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
+          </p>
+          {inBag ? (
+            <button onClick={handleRemoveFromBag} className="btn btn-danger">
+              Remove from Cart <AiFillDelete className="mb-1" />
+            </button>
+          ) : (
+            <button onClick={handleAddToBag} className="btn btn-success">
+              Add to Cart <GrAddCircle className="mb-1" />
+            </button>
+          )}
+          <button
+            onClick={handleProductClick}
+            className="btn btn-primary my-2 m-lg-2"
+          >
+            View Details
+          </button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 function Women() {
   return (
     <>
+      {/* Your Carousel Code */}
       <div
         id="carouselExampleAutoplaying"
         className="carousel slide pt-5"
         data-bs-ride="carousel"
-        data-bs-interval="1500" 
+        data-bs-interval="1500"
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -155,39 +150,34 @@ function Women() {
         </button>
       </div>
 
-      {/* femaleShirts */}
+      {/* ShirtCard */}
       <div
         className="container-fluid py-5"
         style={{ backgroundColor: "#eaeaea9e" }}
       >
-        <h1
-          data-aos="zoom-in-up"
-          data-aos-duration="1500"
-          className="fw-bolder fs-1 py-2 border-bottom border-2 text-center"
-        >
-          Feminine Flair: Explore Women’s Essentials
-        </h1>
+        {/* Your Heading and other elements */}
         <div className="container py-5">
           <h1
             data-aos="zoom-in"
-            data-aos-duration="1500"
+            data-aos-duration="1000"
             className="fw-bolder py-3"
           >
             Premium Shirts
           </h1>
           <div className="row">
-            {femaleShirts.map((shirt, index) => (
-              <ShirtCard key={index} {...shirt} />
+            {shirtData.map((shirt, index) => (
+              <ProductCard key={index} {...shirt} category="shirts" />
             ))}
           </div>
         </div>
       </div>
 
-      {/* femaleBags */}
+      {/* BagCard */}
       <div
         className="container-fluid py-4"
         style={{ backgroundColor: "#eaeaea9e" }}
       >
+        {/* Your Heading and other elements */}
         <div className="container py-5">
           <h1
             data-aos="zoom-in"
@@ -197,13 +187,14 @@ function Women() {
             Premium Bags
           </h1>
           <div className="row">
-            {femaleBags.map((bag, index) => (
-              <BagCard key={index} {...bag} />
+            {bagData.map((bag, index) => (
+              <ProductCard key={index} {...bag} category="bags" />
             ))}
           </div>
         </div>
       </div>
 
+      {/* Special Edition Section */}
       <div
         className="container-fluid"
         style={{ backgroundImage: `url("aa2.jpg")` }}
@@ -235,11 +226,12 @@ function Women() {
         </div>
       </div>
 
-      {/* femaleShoes */}
+      {/* ShoeCard */}
       <div
-        className="container-fluid py-5 "
+        className="container-fluid py-5"
         style={{ backgroundColor: "#eaeaea9e" }}
       >
+        {/* Your Heading and other elements */}
         <div className="container py-5">
           <h1
             data-aos="zoom-in"
@@ -249,8 +241,8 @@ function Women() {
             Premium Shoes
           </h1>
           <div className="row">
-            {femaleShoes.map((shoe, index) => (
-              <ShoeCard key={index} {...shoe} />
+            {shoeData.map((shoe, index) => (
+              <ProductCard key={index} {...shoe} category="shoes" />
             ))}
           </div>
         </div>
@@ -265,6 +257,7 @@ function Women() {
                   style={{ textDecoration: "none" }}
                   className="text-dark"
                   to="/"
+                  onClick={() => window.scrollTo(0, 0)}
                 >
                   ← HOME
                 </NavLink>
@@ -276,7 +269,6 @@ function Women() {
                 <NavLink
                   style={{ textDecoration: "none" }}
                   className="text-white"
-                  // target="_blank"
                   onClick={() => window.scrollTo(0, 0)}
                   to="/MEN"
                 >
