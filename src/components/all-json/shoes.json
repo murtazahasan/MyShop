@@ -30,7 +30,7 @@
     "id": 20,
     "name": "Red Tape",
     "image": "ms4.jpg",
-    "description": "Men Mesh Walking Shoes",
+    "description": "Men Mesh Shoes",
     "price": 1999,
     "discountedPrice": 999,
     "discount": 50
@@ -57,7 +57,7 @@
     "id": 23,
     "name": "Nike",
     "image": "ms7.jpg",
-    "description": "Men Colourblocked Sneakers",
+    "description": "Men clev Sneakers",
     "price": 1999,
     "discountedPrice": 999,
     "discount": 50

@@ -3,7 +3,7 @@
     "id": 49,
     "image": "mt1.jpg",
     "name": "Raymond",
-    "description": "Cotton Formal Shirt",
+    "description": "Formal Shirt",
     "price": 1999,
     "discountedPrice": 999,
     "discount": 50
@@ -21,7 +21,7 @@
     "id": 51,
     "image": "wt3.jpg",
     "name": "DILLINGER",
-    "description": "Women WHITE Shirt",
+    "description": "Women Shirt",
     "price": 1999,
     "discountedPrice": 999,
     "discount": 50

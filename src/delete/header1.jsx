@@ -16,8 +16,8 @@ function Header() {
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-        <div className="container-fluid ps-0">
-          <NavLink className="navbar-brand me-0" to="/" onClick={scrollToTop}>
+        <div className="container-fluid">
+          <NavLink className="navbar-brand" to="/" onClick={scrollToTop}>
             <img className=" rounded-5 ms-3 h-25 w-25" src="logo1.png" alt="" />
           </NavLink>
           <button
@@ -32,7 +32,7 @@ function Header() {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto ps-3 mb-2 mb-lg-0">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <NavLink
                   className="nav-link fw-bold"

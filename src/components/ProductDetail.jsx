@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import featuredData from "./all-json/featured.json";
 import productsData from "./all-json/bestSelling.json";
 import shirtData from "./all-json/shirts.json";
@@ -60,18 +60,18 @@ const ProductDetail = () => {
   const { name, image, description, discountedPrice, discount, price } =
     product;
 
-    // console.log(image)
+  // console.log(image)
   return (
-    <> 
-    <div className="mt-5">
-    <img src={image} className="card-img-top" alt="..." />
-    </div>
-      <h1 className=" text-center fw-bold" style={{ marginTop: "100px" }}>
+    <>
+      <div className="mt-5">
+        <img src={image} className="card-img-top" alt="..." />
+      </div>
+      <h1 className=" text-center mb-5 fw-bold" style={{ marginTop: "100px" }}>
         Product Detail Page
       </h1>
-      <div className="card p-3 mb-5 me-3 ms-3">
+      <div className="card p-3 mb-3 me-3 ms-3">
         <img src={image} className="card-img-top" alt="..." />
-        <div className="card-body mb-3">
+        <div className="card-body mb-2">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{description}</p>
           <p>
@@ -83,6 +83,16 @@ const ProductDetail = () => {
           </p>
         </div>
       </div>
+      <button className="btn btn-dark ms-4 mb-5" type="button">
+        <NavLink
+          style={{ textDecoration: "none" }}
+          className="text-white"
+          to="/"
+          onClick={() => window.scrollTo(0, 0)}
+        >
+          ← HOME
+        </NavLink>
+      </button>
     </>
   );
 };
