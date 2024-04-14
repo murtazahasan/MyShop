@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromBag } from "../store/toBag";
+import { removeFromBag, updateQuantity } from "../store/toBag";
 
 function CartSection() {
   const itemsInBag = useSelector((state) => state.toBag.items);
@@ -8,6 +8,14 @@ function CartSection() {
 
   const handleRemoveFromBag = (id) => {
     dispatch(removeFromBag(id));
+  };
+
+  const handleQuantityChange = (id, quantity) => {
+    dispatch(updateQuantity({ id, quantity }));
+  };
+
+  const getTotalAmount = () => {
+    return itemsInBag.reduce((total, item) => total + (item.discountedPrice * item.quantity), 0);
   };
 
   return (
@@ -31,12 +39,28 @@ function CartSection() {
                 <p className="mb-1">{item.description}</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div>
-                    <span className="text-muted me-2">
-                      Original Price: ${item.price}
+                    <span className="text-muted me-2" style={{ textDecoration: "line-through" }}>
+                      Original Price: RS{item.price}
                     </span>
                     <span className="text-success fw-bold">
-                      Discounted Price: ${item.discountedPrice}
+                      Discounted Price: RS{item.discountedPrice}
                     </span>
+                    <div className="quantity-controls">
+                      <button
+                        className="btn btn-secondary"
+                        onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                        disabled={item.quantity <= 1}
+                      >
+                        -
+                      </button>
+                      <span className="quantity m-2">{item.quantity}</span>
+                      <button
+                        className="btn btn-secondary"
+                        onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
+                      >
+                        +
+                      </button>
+                    </div>
                   </div>
                   <button
                     className="btn btn-danger"
@@ -52,9 +76,9 @@ function CartSection() {
       </div>
 
       <div className=" border-top py-4 px-4 ">
+        <p>Total Amount: ${getTotalAmount()}</p>
         <button className=" btn btn-primary float-end">Purchase Now</button>
       </div>
-
     </div>
   );
 }

@@ -4,18 +4,18 @@
     "name": "pebble",
     "image": "mw1.jpg",
     "description": "Men Analogue Watch",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 1899,
+    "discountedPrice": 1519.2,
+    "discount": 20
   },
   {
     "id": 10,
     "name": "CASIO",
     "image": "mw2.jpg",
     "description": "Men Vintage Watch",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 2099,
+    "discountedPrice": 1679.2,
+    "discount": 20
   },
   {
     "id": 11,
@@ -23,17 +23,17 @@
     "image": "mw3.jpg",
     "description": "Men Analogue Watch",
     "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "discountedPrice": 1599.2,
+    "discount": 20
   },
   {
     "id": 12,
     "name": "Titan",
     "image": "mw4.jpg",
     "description": "Men Analogue Watch",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 1899,
+    "discountedPrice": 1139.4,
+    "discount": 40
   },
   {
     "id": 13,
@@ -41,26 +41,26 @@
     "image": "mw5.jpg",
     "description": "Men Analogue Watch",
     "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "discountedPrice": 1599.2,
+    "discount": 20
   },
   {
     "id": 14,
     "name": "Sonata",
     "image": "mw6.jpg",
     "description": "Men Analogue Watch",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 2099,
+    "discountedPrice": 1679.2,
+    "discount": 20
   },
   {
     "id": 15,
     "name": "pebble",
     "image": "mw7.jpg",
     "description": "Color Fit 2 Smartwatch",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 2199,
+    "discountedPrice": 1539.3,
+    "discount": 30
   },
   {
     "id": 16,
@@ -68,7 +68,7 @@
     "image": "mw8.jpg",
     "description": "Men Leather Straps Watch",
     "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "discountedPrice": 1599.2,
+    "discount": 20
   }
 ]

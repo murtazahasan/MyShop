@@ -13,8 +13,8 @@
     "image": "wb3.jpg",
     "name": "VONICA",
     "description": "LEATHER SHOULDER BAG",
-    "price": 1999,
-    "discountedPrice": 999,
+    "price": 2499,
+    "discountedPrice": 1249,
     "discount": 50
   },
   {
@@ -22,53 +22,53 @@
     "image": "mt8.jpg",
     "name": "Huetrap",
     "description": "Pure Cotton Fit Tshirt",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 1799,
+    "discountedPrice": 1079.4,
+    "discount": 40
   },
   {
     "id": 60,
     "image": "ms4.jpg",
     "name": "Campus",
     "description": "Men Mesh Walking Shoes",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 2299,
+    "discountedPrice": 1839.2,
+    "discount": 20
   },
   {
     "id": 61,
     "image": "wb6.jpg",
     "name": "JOSICQUE",
     "description": "LEATHER TOTE BAG",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 1599,
+    "discountedPrice": 1279.2,
+    "discount": 20
   },
   {
     "id": 6999,
     "image": "mw1.jpg",
     "name": "Titan",
     "description": "Men Analogue Watch",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 3299,
+    "discountedPrice": 2969.1,
+    "discount": 10
   },
   {
     "id": 63,
     "image": "ws3.jpg",
     "name": "AXIUM",
     "description": "Embellished Kitten Heels",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 2999,
+    "discountedPrice": 2699.1,
+    "discount": 10
   },
   {
     "id": 64,
     "image": "ms1.jpg",
     "name": "Puma",
     "description": "Men White Sneakers",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 2099,
+    "discountedPrice": 1679.2,
+    "discount": 20
   }
 ]

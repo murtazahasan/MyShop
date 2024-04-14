@@ -54,10 +54,8 @@ const ProductCard = ({
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{description}</p>
           <p>
-            <span className="fw-bold">Rs.{price}</span>{" "}
-            <span style={{ textDecoration: "line-through" }}>
-              Rs.{discountedPrice}
-            </span>{" "}
+            <span style={{ textDecoration: "line-through" }}>Rs.{price}</span>{" "}
+            <span className="fw-bold">Rs.{discountedPrice}</span>{" "}
             <span style={{ color: "#b84444" }}>{discount}%</span>
           </p>
           {inBag ? (

@@ -4,8 +4,8 @@
     "name": "SEWCHELL",
     "image": "wb1.jpg",
     "description": "FAUX LEATHER TOTE BAG",
-    "price": 1999,
-    "discountedPrice": 999,
+    "price": 2099,
+    "discountedPrice": 1049.5,
     "discount": 50
   },
   {
@@ -13,36 +13,36 @@
     "name": "AMBRIGO",
     "image": "wb2.jpg",
     "description": "TWEED CROSSBODY BAG",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 2299,
+    "discountedPrice": 1839.2,
+    "discount": 20
   },
   {
     "id": 35,
     "name": "VONICA",
     "image": "wb3.jpg",
     "description": "LEATHER SHOULDER BAG",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 1899,
+    "discountedPrice": 1519.2,
+    "discount": 20
   },
   {
     "id": 36,
     "name": "SIWOC",
     "image": "wb4.jpg",
     "description": "The Drop Canvas Tote",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 2399,
+    "discountedPrice": 2039.15,
+    "discount": 15
   },
   {
     "id": 37,
     "name": "EVVIMRO",
     "image": "wb5.jpg",
     "description": "The Drop Tracy Large Canvas Detail Straw Tote",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 1799,
+    "discountedPrice": 1259.3,
+    "discount": 30
   },
   {
     "id": 38,
@@ -50,7 +50,7 @@
     "image": "wb6.jpg",
     "description": "Women's Greenwald Crossbody Bag",
     "price": 1999,
-    "discountedPrice": 999,
+    "discountedPrice": 999.5,
     "discount": 50
   },
   {
@@ -58,9 +58,9 @@
     "name": "RIORA",
     "image": "wb7.jpg",
     "description": "Vera Cotton Purse",
-    "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "price": 2199,
+    "discountedPrice": 1979.1,
+    "discount": 10
   },
   {
     "id": 40,
@@ -68,7 +68,7 @@
     "image": "wb8.jpg",
     "description": "The Sak De BLACK",
     "price": 1999,
-    "discountedPrice": 999,
-    "discount": 50
+    "discountedPrice": 1399.3,
+    "discount": 30
   }
 ]
