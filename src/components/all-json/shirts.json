@@ -5,7 +5,7 @@
     "image": "mt1.jpg",
     "description": "Pure Cotton Formal Shirt",
     "price": 2199,
-    "discountedPrice": 1319.4,
+    "discountedPrice": 1319,
     "discount": 40
   },
   {
@@ -14,7 +14,7 @@
     "image": "mt2.jpg",
     "description": "Loose Fit COTTON T-shirt",
     "price": 1899,
-    "discountedPrice": 1329.3,
+    "discountedPrice": 1329,
     "discount": 30
   },
   {
@@ -23,7 +23,7 @@
     "image": "mt3.jpg",
     "description": "Slim Fit Formal Shirt",
     "price": 2099,
-    "discountedPrice": 1679.2,
+    "discountedPrice": 1679,
     "discount": 20
   },
   {
@@ -32,7 +32,7 @@
     "image": "mt4.jpg",
     "description": "Opaque Formal Shirt",
     "price": 1999,
-    "discountedPrice": 1199.4,
+    "discountedPrice": 1199,
     "discount": 40
   },
   {
@@ -41,7 +41,7 @@
     "image": "mt5.jpg",
     "description": "Pure Cotton Regular Fit Tshirt",
     "price": 2299,
-    "discountedPrice": 1839.2,
+    "discountedPrice": 1839,
     "discount": 20
   },
   {
@@ -50,7 +50,7 @@
     "image": "mt6.jpg",
     "description": "Men Cotton Pure Cotton T-shirt",
     "price": 1799,
-    "discountedPrice": 1259.3,
+    "discountedPrice": 1259,
     "discount": 30
   },
   {

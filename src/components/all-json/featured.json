@@ -5,7 +5,7 @@
     "name": "Raymond",
     "description": "Formal Shirt",
     "price": 1899,
-    "discountedPrice": 949.5,
+    "discountedPrice": 949,
     "discount": 50
   },
   {
@@ -14,7 +14,7 @@
     "name": "CASIO",
     "description": "Vintage  Watch",
     "price": 2199,
-    "discountedPrice": 1099.5,
+    "discountedPrice": 1099,
     "discount": 50
   },
   {
@@ -23,7 +23,7 @@
     "name": "DILLINGER",
     "description": "Women Shirt",
     "price": 1799,
-    "discountedPrice": 1079.4,
+    "discountedPrice": 1079,
     "discount": 40
   },
   {
@@ -32,7 +32,7 @@
     "name": "SEWCHELL",
     "description": "Vera  Cotton  Purse",
     "price": 2399,
-    "discountedPrice": 2159.1,
+    "discountedPrice": 2159,
     "discount": 10
   },
   {
@@ -41,7 +41,7 @@
     "name": "PUMA",
     "description": "Men White  Sneakers",
     "price": 1999,
-    "discountedPrice": 1599.2,
+    "discountedPrice": 1599,
     "discount": 20
   },
   {
@@ -50,7 +50,7 @@
     "name": "AXIUM",
     "description": "Embellished Kitten Heels",
     "price": 2099,
-    "discountedPrice": 1889.1,
+    "discountedPrice": 1889,
     "discount": 10
   },
   {
@@ -59,7 +59,7 @@
     "name": "AMBRIGO",
     "description": "Women's Greenwald Bag",
     "price": 2299,
-    "discountedPrice": 2069.1,
+    "discountedPrice": 2069,
     "discount": 10
   },
   {
@@ -68,7 +68,7 @@
     "name": "CASIO",
     "description": "Vintage Digital Watch",
     "price": 1699,
-    "discountedPrice": 1274.25,
+    "discountedPrice": 1274,
     "discount": 25
   }
 ]

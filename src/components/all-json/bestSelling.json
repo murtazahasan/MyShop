@@ -23,7 +23,7 @@
     "name": "Huetrap",
     "description": "Pure Cotton Fit Tshirt",
     "price": 1799,
-    "discountedPrice": 1079.4,
+    "discountedPrice": 1079,
     "discount": 40
   },
   {
@@ -32,7 +32,7 @@
     "name": "Campus",
     "description": "Men Mesh Walking Shoes",
     "price": 2299,
-    "discountedPrice": 1839.2,
+    "discountedPrice": 1839,
     "discount": 20
   },
   {
@@ -41,7 +41,7 @@
     "name": "JOSICQUE",
     "description": "LEATHER TOTE BAG",
     "price": 1599,
-    "discountedPrice": 1279.2,
+    "discountedPrice": 1279,
     "discount": 20
   },
   {
@@ -50,7 +50,7 @@
     "name": "Titan",
     "description": "Men Analogue Watch",
     "price": 3299,
-    "discountedPrice": 2969.1,
+    "discountedPrice": 2969,
     "discount": 10
   },
   {
@@ -59,7 +59,7 @@
     "name": "AXIUM",
     "description": "Embellished Kitten Heels",
     "price": 2999,
-    "discountedPrice": 2699.1,
+    "discountedPrice": 2699,
     "discount": 10
   },
   {
@@ -68,7 +68,7 @@
     "name": "Puma",
     "description": "Men White Sneakers",
     "price": 2099,
-    "discountedPrice": 1679.2,
+    "discountedPrice": 1679,
     "discount": 20
   }
 ]
