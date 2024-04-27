@@ -45,6 +45,7 @@ const ProductCard = ({
 
   const handleProductClick = () => {
     navigate(`/product/${id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
