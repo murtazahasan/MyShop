@@ -1,8 +1,7 @@
 import React from "react";
-import { IoBagHandleSharp } from "react-icons/io5";
 import { MdSearch } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
-
+import logo from "../assets/logo1.png"
 import { Link, NavLink } from "react-router-dom";
 
 function Header() {
@@ -18,7 +17,7 @@ function Header() {
       <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div className="container-fluid ps-0">
           <NavLink className="navbar-brand me-0" to="/" onClick={scrollToTop}>
-            <img className=" rounded-5 ms-3 h-25 w-25" src="logo1.png" alt="" />
+            <img className=" rounded-5 ms-3 h-25 w-25" src={logo} alt="" />
           </NavLink>
           <button
             className="navbar-toggler"
