@@ -63,14 +63,15 @@ const ProductDetail = () => {
   // console.log(image)
   return (
     <>
-      <div className="mt-5">
-        <img src={image} className="card-img-top" alt="..." />
-      </div>
       <h1 className=" text-center mb-5 fw-bold" style={{ marginTop: "100px" }}>
         Product Detail Page
       </h1>
-      <div className="card p-3 mb-3 me-3 ms-3">
-        <img src={image} className="card-img-top" alt="..." />
+      <div className="card p-3 mb-3 me-3 ms-3 position-static">
+        <img
+          src={`../public/${image}`}
+          className="card-img-top w-25"
+          alt="..."
+        />
         <div className="card-body mb-2">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{description}</p>
@@ -78,7 +79,7 @@ const ProductDetail = () => {
             <span className="fw-bold">Rs.{price} </span>
             <span style={{ textDecoration: "line-through" }}>
               Rs.{discountedPrice}
-            </span>{" "}
+            </span>
             <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
           </p>
         </div>
