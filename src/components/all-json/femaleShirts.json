@@ -2,7 +2,7 @@
   {
     "id": 25,
     "name": "CLAFOUTIS",
-    "image": "wt1.jpg",
+    "image": "/wt1.jpg",
     "description": "Women Scalloped Pure Cotton T-shirt",
     "price": 2099,
     "discountedPrice": 1679.2,
@@ -11,7 +11,7 @@
   {
     "id": 26,
     "name": "Corner",
-    "image": "wt2.jpg",
+    "image": "/wt2.jpg",
     "description": "Women Typography Printed T-shirt",
     "price": 1799,
     "discountedPrice": 1439.2,
@@ -20,7 +20,7 @@
   {
     "id": 27,
     "name": "DILLINGER",
-    "image": "wt3.jpg",
+    "image": "/wt3.jpg",
     "description": "Women WHITE T-shirt",
     "price": 2299,
     "discountedPrice": 2069.1,
@@ -29,7 +29,7 @@
   {
     "id": 28,
     "name": "Kook N Keech",
-    "image": "wt4.jpg",
+    "image": "/wt4.jpg",
     "description": "Varsity Printed T-shirt",
     "price": 1999,
     "discountedPrice": 1799.1,
@@ -38,7 +38,7 @@
   {
     "id": 29,
     "name": "The Souled",
-    "image": "wt5.jpg",
+    "image": "/wt5.jpg",
     "description": "Women Dyed T-shirt",
     "price": 1899,
     "discountedPrice": 1519.2,
@@ -47,7 +47,7 @@
   {
     "id": 30,
     "name": "The Dry State",
-    "image": "wt6.jpg",
+    "image": "/wt6.jpg",
     "description": "Varsity Printed T-shirt",
     "price": 2199,
     "discountedPrice": 1759.2,
@@ -56,7 +56,7 @@
   {
     "id": 31,
     "name": "H&M",
-    "image": "wt7.jpg",
+    "image": "/wt7.jpg",
     "description": "Women Typography",
     "price": 2099,
     "discountedPrice": 1679.2,
@@ -65,7 +65,7 @@
   {
     "id": 32,
     "name": "ZARA",
-    "image": "wt8.jpg",
+    "image": "/wt8.jpg",
     "description": "Women SOLID T-shirt",
     "price": 1999,
     "discountedPrice": 1399.3,

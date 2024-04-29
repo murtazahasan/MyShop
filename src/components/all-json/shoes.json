@@ -2,7 +2,7 @@
   {
     "id": 17,
     "name": "Puma",
-    "image": "ms1.jpg",
+    "image": "/ms1.jpg",
     "description": "Men White Leather Sneakers",
     "price": 2299,
     "discountedPrice": 1724.25,
@@ -11,7 +11,7 @@
   {
     "id": 18,
     "name": "Nike",
-    "image": "ms2.jpg",
+    "image": "/ms2.jpg",
     "description": "Men Mid-Top Basketball Shoes",
     "price": 1899,
     "discountedPrice": 1519.2,
@@ -20,7 +20,7 @@
   {
     "id": 19,
     "name": "Campus",
-    "image": "ms3.jpg",
+    "image": "/ms3.jpg",
     "description": "Men Woven Shoes",
     "price": 2199,
     "discountedPrice": 1979.1,
@@ -29,7 +29,7 @@
   {
     "id": 20,
     "name": "Red Tape",
-    "image": "ms4.jpg",
+    "image": "/ms4.jpg",
     "description": "Men Mesh Shoes",
     "price": 1999,
     "discountedPrice": 1599.2,
@@ -38,7 +38,7 @@
   {
     "id": 21,
     "name": "ASIAN",
-    "image": "ms5.jpg",
+    "image": "/ms5.jpg",
     "description": "Men Woven Grip-Ed Shoes",
     "price": 2099,
     "discountedPrice": 1469.3,
@@ -47,7 +47,7 @@
   {
     "id": 22,
     "name": "Nike",
-    "image": "ms6.jpg",
+    "image": "/ms6.jpg",
     "description": "Men Solid Leather Sneakers",
     "price": 2299,
     "discountedPrice": 1839.2,
@@ -56,7 +56,7 @@
   {
     "id": 23,
     "name": "Nike",
-    "image": "ms7.jpg",
+    "image": "/ms7.jpg",
     "description": "Men clev Sneakers",
     "price": 1999,
     "discountedPrice": 1399.3,
@@ -65,7 +65,7 @@
   {
     "id": 24,
     "name": "Reebok",
-    "image": "ms8.jpg",
+    "image": "/ms8.jpg",
     "description": "Men Perforations ",
     "price": 2199,
     "discountedPrice": 1539.3,

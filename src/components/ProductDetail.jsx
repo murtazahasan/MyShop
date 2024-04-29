@@ -68,7 +68,7 @@ const ProductDetail = () => {
       </h1>
       <div className="card p-3 mb-3 me-3 ms-3 position-static">
         <img
-          src={`../public/${image}`}
+          src={image}
           className="card-img-top w-25"
           alt="..."
         />

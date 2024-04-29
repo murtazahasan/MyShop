@@ -2,7 +2,7 @@
   {
     "id": 41,
     "name": "Brauch",
-    "image": "ws1.jpg",
+    "image": "/ws1.jpg",
     "description": "Embellished Heels",
     "price": 2199,
     "discountedPrice": 1539.3,
@@ -11,7 +11,7 @@
   {
     "id": 42,
     "name": "NEEMANS",
-    "image": "ws2.jpg",
+    "image": "/ws2.jpg",
     "description": "Solid Block BOOTS",
     "price": 1899,
     "discountedPrice": 1519.2,
@@ -20,7 +20,7 @@
   {
     "id": 43,
     "name": "AXIUM",
-    "image": "ws3.jpg",
+    "image": "/ws3.jpg",
     "description": "Embellished Kitten Heels",
     "price": 2299,
     "discountedPrice": 1839.2,
@@ -29,7 +29,7 @@
   {
     "id": 44,
     "name": "Puma",
-    "image": "ws4.jpg",
+    "image": "/ws4.jpg",
     "description": "Women blocked Sneakers",
     "price": 1999,
     "discountedPrice": 1599.2,
@@ -38,7 +38,7 @@
   {
     "id": 45,
     "name": "Marc Loire",
-    "image": "ws5.jpg",
+    "image": "/ws5.jpg",
     "description": "Woven Wedge Heel",
     "price": 2099,
     "discountedPrice": 1784.15,
@@ -47,7 +47,7 @@
   {
     "id": 46,
     "name": "Denill",
-    "image": "ws6.jpg",
+    "image": "/ws6.jpg",
     "description": "Women sevenou Sneakers",
     "price": 1799,
     "discountedPrice": 1439.2,
@@ -56,7 +56,7 @@
   {
     "id": 47,
     "name": "Shoetopia",
-    "image": "ws7.jpg",
+    "image": "/ws7.jpg",
     "description": "Women Pumps",
     "price": 1999,
     "discountedPrice": 1399.3,
@@ -65,7 +65,7 @@
   {
     "id": 48,
     "name": "El Paso",
-    "image": "ws8.jpg",
+    "image": "/ws8.jpg",
     "description": "Women Sneakers",
     "price": 2299,
     "discountedPrice": 1954.15,

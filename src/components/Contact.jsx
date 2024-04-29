@@ -14,19 +14,19 @@ function Contact() {
             className="text-center fw-bold display-4  mb-4">Contact Us</h2>
             <form id="contact-form">
               <div className="mb-3">
-                <label for="name" className="form-label">
+                <label htmlFor="name" className="form-label">
                   Name
                 </label>
                 <input type="text" className="form-control" id="name" required />
               </div>
               <div className="mb-3">
-                <label for="email" className="form-label">
+                <label htmlFor="email" className="form-label">
                   Email
                 </label>
                 <input type="email" className="form-control" id="email" required />
               </div>
               <div className="mb-3">
-                <label for="message" className="form-label">
+                <label htmlFor="message" className="form-label">
                   Message
                 </label>
                 <textarea

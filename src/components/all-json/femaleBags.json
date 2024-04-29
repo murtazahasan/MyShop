@@ -2,7 +2,7 @@
   {
     "id": 33,
     "name": "SEWCHELL",
-    "image": "wb1.jpg",
+    "image": "/wb1.jpg",
     "description": "FAUX LEATHER TOTE BAG",
     "price": 2099,
     "discountedPrice": 1049.5,
@@ -11,7 +11,7 @@
   {
     "id": 34,
     "name": "AMBRIGO",
-    "image": "wb2.jpg",
+    "image": "/wb2.jpg",
     "description": "TWEED CROSSBODY BAG",
     "price": 2299,
     "discountedPrice": 1839.2,
@@ -20,7 +20,7 @@
   {
     "id": 35,
     "name": "VONICA",
-    "image": "wb3.jpg",
+    "image": "/wb3.jpg",
     "description": "LEATHER SHOULDER BAG",
     "price": 1899,
     "discountedPrice": 1519.2,
@@ -29,7 +29,7 @@
   {
     "id": 36,
     "name": "SIWOC",
-    "image": "wb4.jpg",
+    "image": "/wb4.jpg",
     "description": "The Drop Canvas Tote",
     "price": 2399,
     "discountedPrice": 2039.15,
@@ -38,7 +38,7 @@
   {
     "id": 37,
     "name": "EVVIMRO",
-    "image": "wb5.jpg",
+    "image": "/wb5.jpg",
     "description": "The Drop Tracy Large Canvas Detail Straw Tote",
     "price": 1799,
     "discountedPrice": 1259,
@@ -47,7 +47,7 @@
   {
     "id": 38,
     "name": "JOSICQUE",
-    "image": "wb6.jpg",
+    "image": "/wb6.jpg",
     "description": "Women's Greenwald Crossbody Bag",
     "price": 1999,
     "discountedPrice": 999.5,
@@ -56,7 +56,7 @@
   {
     "id": 39,
     "name": "RIORA",
-    "image": "wb7.jpg",
+    "image": "/wb7.jpg",
     "description": "Vera Cotton Purse",
     "price": 2199,
     "discountedPrice": 1979.1,
@@ -65,7 +65,7 @@
   {
     "id": 40,
     "name": "HAMQUTE",
-    "image": "wb8.jpg",
+    "image": "/wb8.jpg",
     "description": "The Sak De BLACK",
     "price": 1999,
     "discountedPrice": 1399.3,

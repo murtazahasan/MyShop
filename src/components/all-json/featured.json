@@ -1,7 +1,7 @@
 [
   {
     "id": 49,
-    "image": "mt1.jpg",
+    "image": "/mt1.jpg",
     "name": "Raymond",
     "description": "Formal Shirt",
     "price": 1899,
@@ -10,7 +10,7 @@
   },
   {
     "id": 50,
-    "image": "mw1.jpg",
+    "image": "/mw1.jpg",
     "name": "CASIO",
     "description": "Vintage  Watch",
     "price": 2199,
@@ -19,7 +19,7 @@
   },
   {
     "id": 51,
-    "image": "wt3.jpg",
+    "image": "/wt3.jpg",
     "name": "DILLINGER",
     "description": "Women Shirt",
     "price": 1799,
@@ -28,7 +28,7 @@
   },
   {
     "id": 5999,
-    "image": "wb4.jpg",
+    "image": "/wb4.jpg",
     "name": "SEWCHELL",
     "description": "Vera  Cotton  Purse",
     "price": 2399,
@@ -37,7 +37,7 @@
   },
   {
     "id": 53,
-    "image": "ms1.jpg",
+    "image": "/ms1.jpg",
     "name": "PUMA",
     "description": "Men White  Sneakers",
     "price": 1999,
@@ -46,7 +46,7 @@
   },
   {
     "id": 54,
-    "image": "ws3.jpg",
+    "image": "/ws3.jpg",
     "name": "AXIUM",
     "description": "Embellished Kitten Heels",
     "price": 2099,
@@ -55,7 +55,7 @@
   },
   {
     "id": 55,
-    "image": "wb6.jpg",
+    "image": "/wb6.jpg",
     "name": "AMBRIGO",
     "description": "Women's Greenwald Bag",
     "price": 2299,
@@ -64,7 +64,7 @@
   },
   {
     "id": 56,
-    "image": "mw2.jpg",
+    "image": "/mw2.jpg",
     "name": "CASIO",
     "description": "Vintage Digital Watch",
     "price": 1699,

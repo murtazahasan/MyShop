@@ -1,7 +1,7 @@
 [
   {
     "id": 57,
-    "image": "mw7.jpg",
+    "image": "/mw7.jpg",
     "name": "pebble",
     "description": "Color Fit 999 Smartwatch",
     "price": 1999,
@@ -10,7 +10,7 @@
   },
   {
     "id": 58,
-    "image": "wb3.jpg",
+    "image": "/wb3.jpg",
     "name": "VONICA",
     "description": "LEATHER SHOULDER BAG",
     "price": 2499,
@@ -19,7 +19,7 @@
   },
   {
     "id": 59,
-    "image": "mt8.jpg",
+    "image": "/mt8.jpg",
     "name": "Huetrap",
     "description": "Pure Cotton Fit Tshirt",
     "price": 1799,
@@ -28,7 +28,7 @@
   },
   {
     "id": 60,
-    "image": "ms4.jpg",
+    "image": "/ms4.jpg",
     "name": "Campus",
     "description": "Men Mesh Walking Shoes",
     "price": 2299,
@@ -37,7 +37,7 @@
   },
   {
     "id": 61,
-    "image": "wb6.jpg",
+    "image": "/wb6.jpg",
     "name": "JOSICQUE",
     "description": "LEATHER TOTE BAG",
     "price": 1599,
@@ -46,7 +46,7 @@
   },
   {
     "id": 6999,
-    "image": "mw1.jpg",
+    "image": "/mw1.jpg",
     "name": "Titan",
     "description": "Men Analogue Watch",
     "price": 3299,
@@ -55,7 +55,7 @@
   },
   {
     "id": 63,
-    "image": "ws3.jpg",
+    "image": "/ws3.jpg",
     "name": "AXIUM",
     "description": "Embellished Kitten Heels",
     "price": 2999,
@@ -64,7 +64,7 @@
   },
   {
     "id": 64,
-    "image": "ms1.jpg",
+    "image": "/ms1.jpg",
     "name": "Puma",
     "description": "Men White Sneakers",
     "price": 2099,
