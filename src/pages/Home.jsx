@@ -1,32 +1,121 @@
 import React from "react";
-import featuredData from "./all-json/featured.json";
-import productsData from "./all-json/bestSelling.json";
-import { useNavigate } from "react-router-dom";
+import featuredData from "../components/all-json/featured.json";
+import productsData from "../components/all-json/bestSelling.json";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addToBag, removeFromBag } from "../store/toBag";
+import { AiFillDelete } from "react-icons/ai";
+import { GrAddCircle } from "react-icons/gr";
+
+const ProductCard = ({
+  id,
+  image,
+  name,
+  description,
+  price,
+  discountedPrice,
+  discount,
+}) => {
+  const dispatch = useDispatch();
+  const inBag = useSelector((state) =>
+    state.toBag.items.find((item) => item.id === id)
+  );
+
+  const handleAddToBag = () => {
+    dispatch(
+      addToBag({
+        id,
+        name,
+        image,
+        description,
+        discountedPrice,
+        discount,
+        price,
+      })
+    );
+  };
+
+  const handleRemoveFromBag = () => {
+    dispatch(removeFromBag(id));
+  };
+
+  const navigate = useNavigate();
+
+  const handleProductClick = () => {
+    navigate(`/product/${id}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <div className="col-md-3 col-6">
+      <div className="card mb-3">
+        <img src={image} className="card-img-top" alt="..." />
+        <div className="card-body">
+          <h5 className="card-title">{name}</h5>
+          <p className="card-text">{description}</p>
+          <p>
+            <span style={{ textDecoration: "line-through" }}>Rs.{price}</span>{" "}
+            <span className="fw-bold">Rs.{discountedPrice}</span>{" "}
+            <span style={{ color: "#b84444" }}>{discount}%</span>
+          </p>
+          {inBag ? (
+            <button onClick={handleRemoveFromBag} className="btn btn-danger">
+              Remove from Cart <AiFillDelete className="mb-1" />
+            </button>
+          ) : (
+            <button onClick={handleAddToBag} className="btn btn-success">
+              Add to Cart <GrAddCircle className="mb-1" />
+            </button>
+          )}
+          <button
+            onClick={handleProductClick}
+            className="btn btn-primary my-2 m-lg-2"
+          >
+            View Details
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+function ProductDetail() {
+  const { productId } = useParams();
+  // Fetch product details based on productId from API or other data source
+
+  return (
+    <div>
+      <h1>Product Detail Page</h1>
+      <p>Product ID: {productId}</p>
+    </div>
+  );
+}
 
 function Home() {
   const navigate = useNavigate();
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
   const handleMenButtonClick = () => {
-    navigate('/MEN');
+    navigate("/MEN");
     scrollToTop();
   };
 
   const handleWomenButtonClick = () => {
-    navigate('/WOMEN');
+    navigate("/WOMEN");
     scrollToTop();
   };
 
   const handleAboutButtonClick = () => {
-    navigate('/ABOUT');
+    navigate("/ABOUT");
     scrollToTop();
   };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <>
       {/* 1 */}
@@ -39,7 +128,7 @@ function Home() {
             <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
               <div className="col-10  col-sm-8 col-lg-6">
                 <img
-                  src="bssize.png"
+                  src="b3.png"
                   className="d-block mx-lg-auto  img-fluid "
                   alt="Home Picture"
                 />
@@ -87,37 +176,13 @@ function Home() {
         <div className="container py-5">
           <div className="row">
             {featuredData.map((product, index) => (
-              <div key={index} className="col-md-3 col-6">
-                <div className="card mb-3">
-                  <img
-                    src={product.imgSrc}
-                    className="card-img-top"
-                    alt="..."
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{product.title}</h5>
-                    <p className="card-text">{product.description}</p>
-                    <p>
-                      <span className="fw-bold">{product.price}</span>{" "}
-                      <span style={{ textDecoration: "line-through" }}>
-                        {product.discountedPrice}
-                      </span>{" "}
-                      <span style={{ color: "#b84444" }}>
-                        {product.discount}
-                      </span>
-                    </p>
-                    <a href="#" className="btn btn-dark">
-                      Shop Now
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <ProductCard key={index} {...product} />
             ))}
           </div>
         </div>
       </div>
 
-      {/* jumbotron */}
+      {/* jumbotron section*/}
       <div
         className="container-fluid py-5"
         style={{ backgroundColor: "#eaeaea73" }}
@@ -228,31 +293,7 @@ function Home() {
         <div className="container py-5">
           <div className="row">
             {productsData.map((product, index) => (
-              <div className="col-md-3 col-6" key={index}>
-                <div className="card mb-3">
-                  <img
-                    src={product.imgSrc}
-                    className="card-img-top"
-                    alt="..."
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">{product.title}</h5>
-                    <p className="card-text">{product.description}</p>
-                    <p>
-                      <span className="fw-bold">{product.price}</span>{" "}
-                      <span style={{ textDecoration: "line-through" }}>
-                        {product.discountedPrice}
-                      </span>{" "}
-                      <span style={{ color: "#b84444" }}>
-                        {product.discount}
-                      </span>
-                    </p>
-                    <a href="#" className="btn btn-dark">
-                      Shop Now
-                    </a>
-                  </div>
-                </div>
-              </div>
+              <ProductCard key={index} {...product} />
             ))}
           </div>
         </div>

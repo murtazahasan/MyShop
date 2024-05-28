@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
-import shirtData from "./all-json/shirts.json";
-import watchData from "./all-json/watches.json";
-import shoeData from "./all-json/shoes.json";
+import shirtData from "../components/all-json/femaleShirts.json";
+import bagData from "../components/all-json/femaleBags.json";
+import shoeData from "../components/all-json/femaleShoes.json";
 import { addToBag, removeFromBag } from "../store/toBag";
 import { AiFillDelete } from "react-icons/ai";
 import { GrAddCircle } from "react-icons/gr";
@@ -16,7 +16,7 @@ const ProductCard = ({
   price,
   discountedPrice,
   discount,
-  type,
+  category,
 }) => {
   const dispatch = useDispatch();
   const inBag = useSelector((state) =>
@@ -24,7 +24,8 @@ const ProductCard = ({
   );
   const navigate = useNavigate();
 
-  const handleAddToBag = () => {
+  const handleAddToBag = (e) => {
+    e.stopPropagation(); // Prevent event propagation
     dispatch(
       addToBag({
         id,
@@ -34,12 +35,12 @@ const ProductCard = ({
         discountedPrice,
         discount,
         price,
-        type,
       })
     );
   };
 
-  const handleRemoveFromBag = () => {
+  const handleRemoveFromBag = (e) => {
+    e.stopPropagation(); // Prevent event propagation
     dispatch(removeFromBag(id));
   };
 
@@ -50,14 +51,18 @@ const ProductCard = ({
 
   return (
     <div className="col-md-3 col-6">
-      <div className="card mb-3">
+      <div
+        className="card mb-3"
+        style={{ cursor: "pointer" }}
+        onClick={handleProductClick}
+      >
         <img src={image} className="card-img-top" alt="..." />
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{description}</p>
           <p>
             <span style={{ textDecoration: "line-through" }}>Rs.{price}</span>{" "}
-            <span className="fw-bold">Rs.{discountedPrice}</span>{" "}
+            <span className="fw-bold">Rs.{discountedPrice}</span>
             <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
           </p>
           {inBag ? (
@@ -81,21 +86,7 @@ const ProductCard = ({
   );
 };
 
-function Men() {
-  const navigate = useNavigate();
-
-  const handleMenButtonClick = () => {
-    navigate("/MEN");
-    scrollToTop();
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
+function Women() {
   return (
     <>
       {/* Your Carousel Code */}
@@ -108,7 +99,7 @@ function Men() {
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img
-              src="bm1.jpeg"
+              src="bw1.png"
               className="d-block w-100"
               style={{ maxHeight: "80vh" }}
               alt="..."
@@ -116,7 +107,7 @@ function Men() {
           </div>
           <div className="carousel-item">
             <img
-              src="bm2.jpeg"
+              src="bw2.png"
               className="d-block w-100"
               style={{ maxHeight: "80vh" }}
               alt="..."
@@ -124,7 +115,7 @@ function Men() {
           </div>
           <div className="carousel-item">
             <img
-              src="bm3.jpeg"
+              src="bw3.png"
               className="d-block w-100"
               style={{ maxHeight: "80vh" }}
               alt="..."
@@ -162,6 +153,7 @@ function Men() {
         className="container-fluid py-5"
         style={{ backgroundColor: "#eaeaea9e" }}
       >
+        {/* Your Heading and other elements */}
         <div className="container py-5">
           <h1
             data-aos="zoom-in"
@@ -171,29 +163,30 @@ function Men() {
             Premium Shirts
           </h1>
           <div className="row">
-            {shirtData.map((product, index) => (
-              <ProductCard key={index} {...product} type="shirt" />
+            {shirtData.map((shirt, index) => (
+              <ProductCard key={index} {...shirt} category="shirts" />
             ))}
           </div>
         </div>
       </div>
 
-      {/* WatchCard */}
+      {/* BagCard */}
       <div
         className="container-fluid py-4"
         style={{ backgroundColor: "#eaeaea9e" }}
       >
+        {/* Your Heading and other elements */}
         <div className="container py-5">
           <h1
             data-aos="zoom-in"
             data-aos-duration="1500"
             className="fw-bolder py-3"
           >
-            Analog Watches
+            Premium Bags
           </h1>
           <div className="row">
-            {watchData.map((product, index) => (
-              <ProductCard key={index} {...product} type="watch" />
+            {bagData.map((bag, index) => (
+              <ProductCard key={index} {...bag} category="bags" />
             ))}
           </div>
         </div>
@@ -222,7 +215,7 @@ function Men() {
                 data-aos="zoom-in"
                 data-aos-duration="1500"
                 type="button"
-                className="btn  btn-light   btn-lg px-4 gap-3"
+                className="btn btn-light btn-lg px-4 gap-3"
               >
                 SHOP NOW
               </button>
@@ -236,23 +229,24 @@ function Men() {
         className="container-fluid py-5"
         style={{ backgroundColor: "#eaeaea9e" }}
       >
+        {/* Your Heading and other elements */}
         <div className="container py-5">
           <h1
             data-aos="zoom-in"
             data-aos-duration="1500"
             className="fw-bolder border-bottom py-3"
           >
-            Exquisite Smart Watches
+            Premium Shoes
           </h1>
           <div className="row">
-            {shoeData.map((product, index) => (
-              <ProductCard key={index} {...product} type="watch" />
+            {shoeData.map((shoe, index) => (
+              <ProductCard key={index} {...shoe} category="shoes" />
             ))}
           </div>
         </div>
         <div className="container">
           <div className="row">
-            <span className="d-flex gap-3 ps-4 py-3">
+            <span className="d-flex gap-3 ps-4   py-3">
               <button
                 className="btn  btn-outline-secondary d-inline-flex align-items-center"
                 type="button"
@@ -273,10 +267,10 @@ function Men() {
                 <NavLink
                   style={{ textDecoration: "none" }}
                   className="text-white"
-                  to="/WOMEN"
                   onClick={() => window.scrollTo(0, 0)}
+                  to="/MEN"
                 >
-                  WOMEN →
+                  MEN →
                 </NavLink>
               </button>
             </span>
@@ -287,4 +281,4 @@ function Men() {
   );
 }
 
-export default Men;
+export default Women;

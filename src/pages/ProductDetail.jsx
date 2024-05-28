@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
-import featuredData from "./all-json/featured.json";
-import productsData from "./all-json/bestSelling.json";
-import shirtData from "./all-json/shirts.json";
-import watchData from "./all-json/watches.json";
-import shoeData from "./all-json/shoes.json";
-import fshirtData from "./all-json/femaleShirts.json";
-import bagData from "./all-json/femaleBags.json";
-import fshoeData from "./all-json/femaleShoes.json";
+import featuredData from "../components/all-json/featured.json";
+import productsData from "../components/all-json/bestSelling.json";
+import shirtData from "../components/all-json/shirts.json";
+import watchData from "../components/all-json/watches.json";
+import shoeData from "../components/all-json/shoes.json";
+import fshirtData from "../components/all-json/femaleShirts.json";
+import bagData from "../components/all-json/femaleBags.json";
+import fshoeData from "../components/all-json/femaleShoes.json";
 
 const ProductDetail = () => {
   const { productId } = useParams();

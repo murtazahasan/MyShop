@@ -20,10 +20,12 @@ import {
   About,
   Contact,
   Signup,
-  CartSection,
   Bag,
-  Footer,
+  CartBox,
+  CartSection,
   ProductDetail,
+  Footer,
+  Login,
 } from "./components/index";
 
 const router = createBrowserRouter([
@@ -54,6 +56,10 @@ const router = createBrowserRouter([
       {
         path: "sign-up",
         element: <Signup />,
+      },
+      {
+        path: "log-in",
+        element: <Login />,
       },
       {
         path: "my-cart",

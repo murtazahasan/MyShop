@@ -82,8 +82,8 @@ function Header() {
             <div className="d-flex">
               <MdSearch className="fs-5 mx-2" />
 
-              <NavLink className="nav-link" to="sign-up" onClick={scrollToTop}>
-                <span className="px-2 fw-medium">Signup</span>
+              <NavLink className="nav-link" to="log-in" onClick={scrollToTop}>
+                <span className="px-2 fw-medium">Log In</span>
                 <FaUserCircle className="fs-5 me-2" />
               </NavLink>
             </div>

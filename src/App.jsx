@@ -7,10 +7,13 @@ import {
   Women,
   About,
   Contact,
+  Signup,
+  Bag,
   CartBox,
   CartSection,
-  Bag,
+  ProductDetail,
   Footer,
+  Login,
 } from "./components/index";
 import { Outlet } from "react-router-dom";
 import AOS from "aos";
