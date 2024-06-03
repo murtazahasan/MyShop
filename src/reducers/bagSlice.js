@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 export const toBagSlice = createSlice({
-  name: 'toBag',
+  name: 'Bag',
   initialState: {
     items: [],
   },

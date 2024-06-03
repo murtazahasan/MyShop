@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { removeFromBag, updateQuantity } from "../store/toBag";
+import { removeFromBag, updateQuantity } from "../reducers/bagSlice";
 
 function CartSection() {
-  const itemsInBag = useSelector((state) => state.toBag.items);
+  const itemsInBag = useSelector((state) => state.Bag.items);
   const dispatch = useDispatch();
 
   const handleRemoveFromBag = (id) => {

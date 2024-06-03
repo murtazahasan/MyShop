@@ -4,9 +4,10 @@ import { NavLink, useNavigate } from "react-router-dom";
 import shirtData from "../components/all-json/shirts.json";
 import watchData from "../components/all-json/watches.json";
 import shoeData from "../components/all-json/shoes.json";
-import { addToBag, removeFromBag } from "../store/toBag";
+import { addToBag, removeFromBag } from "../reducers/bagSlice";
 import { AiFillDelete } from "react-icons/ai";
 import { GrAddCircle } from "react-icons/gr";
+import { RxEyeOpen } from "react-icons/rx";
 
 const ProductCard = ({
   id,
@@ -20,7 +21,7 @@ const ProductCard = ({
 }) => {
   const dispatch = useDispatch();
   const inBag = useSelector((state) =>
-    state.toBag.items.find((item) => item.id === id)
+    state.Bag.items.find((item) => item.id === id)
   );
   const navigate = useNavigate();
 
@@ -73,7 +74,7 @@ const ProductCard = ({
             onClick={handleProductClick}
             className="btn btn-primary my-2 m-lg-2"
           >
-            View Details
+            View Detail <RxEyeOpen className="mb-1 " />
           </button>
         </div>
       </div>

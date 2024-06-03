@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { toBagSlice } from "../store/toBag";
+import { toBagSlice } from "../reducers/bagSlice";
 import cartimg from "../assets/28.png"
 
 function CartBox() {

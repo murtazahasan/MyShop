@@ -3,9 +3,11 @@ import featuredData from "../components/all-json/featured.json";
 import productsData from "../components/all-json/bestSelling.json";
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addToBag, removeFromBag } from "../store/toBag";
+import { addToBag, removeFromBag } from "../reducers/bagSlice";
 import { AiFillDelete } from "react-icons/ai";
 import { GrAddCircle } from "react-icons/gr";
+import { RxEyeOpen } from "react-icons/rx";
+
 
 const ProductCard = ({
   id,
@@ -18,7 +20,7 @@ const ProductCard = ({
 }) => {
   const dispatch = useDispatch();
   const inBag = useSelector((state) =>
-    state.toBag.items.find((item) => item.id === id)
+    state.Bag.items.find((item) => item.id === id)
   );
 
   const handleAddToBag = () => {
@@ -64,14 +66,14 @@ const ProductCard = ({
             </button>
           ) : (
             <button onClick={handleAddToBag} className="btn btn-success">
-              Add to Cart <GrAddCircle className="mb-1" />
+              Add to Cart <GrAddCircle className="mb-1 " />
             </button>
           )}
           <button
             onClick={handleProductClick}
             className="btn btn-primary my-2 m-lg-2"
           >
-            View Details
+            View Detail <RxEyeOpen className="mb-1 " />
           </button>
         </div>
       </div>
