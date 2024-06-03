@@ -62,7 +62,7 @@ const ProductCard = ({
           </p>
           {inBag ? (
             <button onClick={handleRemoveFromBag} className="btn btn-danger">
-              Remove from Cart <AiFillDelete className="mb-1" />
+              Remove  <AiFillDelete className="mb-1" />
             </button>
           ) : (
             <button onClick={handleAddToBag} className="btn btn-success">
