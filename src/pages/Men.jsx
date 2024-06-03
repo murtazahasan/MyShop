@@ -189,7 +189,7 @@ function Men() {
             data-aos-duration="1500"
             className="fw-bolder py-3"
           >
-            Analog Watches
+            Premium Watches
           </h1>
           <div className="row">
             {watchData.map((product, index) => (
