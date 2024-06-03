@@ -242,7 +242,7 @@ function Men() {
             data-aos-duration="1500"
             className="fw-bolder border-bottom py-3"
           >
-            Exquisite Smart Watches
+            Premium Shoes
           </h1>
           <div className="row">
             {shoeData.map((product, index) => (
