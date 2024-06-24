@@ -1,40 +1,78 @@
-import React from 'react';
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate, Link } from "react-router-dom";
+import { useSnackbar } from "notistack";
 
-function Signup() {
+const SignUp = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
+  const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
+
+  const handleSignUp = async () => {
+    try {
+      await axios.post("http://localhost:4000/user/signup", {
+        email,
+        password,
+        username,
+      });
+      enqueueSnackbar("Sign up successful! Please sign in.", {
+        variant: "success",
+      });
+      navigate("/sign-in");
+    } catch (err) {
+      enqueueSnackbar(err.response.data.message || "Sign up failed", {
+        variant: "error",
+      });
+    }
+  };
+
   return (
-    <div className="container pt-5">
-      <div className="row justify-content-center my-5 pb-3 pt-5">
+    <div className="container mb-5 mx-2" style={{ marginTop: "131px" }}>
+      <div className="row justify-content-center">
         <div className="col-md-6">
-          <div className="card">
-            <div className="card-header py-3 ">
-              <h1 className="mb-0">Sign Up</h1>
-            </div>
-            <div className="card-body">
-              <form>
-                <div className="form-group">
-                  <label htmlFor="username">Username</label>
-                  <input type="text" className="form-control" id="username" placeholder="Enter username" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="email">Email address</label>
-                  <input type="email" className="form-control" id="email" placeholder="Enter email" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="password">Password</label>
-                  <input type="password" className="form-control" id="password" placeholder="Password" />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="confirmPassword">Confirm Password</label>
-                  <input type="password" className="form-control" id="confirmPassword" placeholder="Confirm Password" />
-                </div>
-                <button type="submit" className="btn mt-3 btn-primary btn-block">Sign Up</button>
-              </form>
-            </div>
+          <h2 className="mb-4">Sign Up</h2>
+          <div className="form-group mb-3">
+            <input
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="form-control"
+            />
           </div>
+          <div className="form-group mb-3">
+            <input
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="form-control"
+            />
+          </div>
+          <div className="form-group mb-3">
+            <input
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="form-control"
+            />
+          </div>
+          <button onClick={handleSignUp} className="btn btn-primary w-100">
+            Sign Up
+          </button>
+          <p className="mt-4">
+            Already have an account?
+            <Link to="/login" className=" mx-2 text-primary">
+            Login
+            </Link>
+          </p>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default Signup;
+export default SignUp;

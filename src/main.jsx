@@ -26,7 +26,9 @@ import {
   ProductDetail,
   Footer,
   Login,
+  SearchResults,
 } from "./components/index";
+import { SnackbarProvider } from "notistack";
 
 const router = createBrowserRouter([
   {
@@ -58,7 +60,7 @@ const router = createBrowserRouter([
         element: <Signup />,
       },
       {
-        path: "log-in",
+        path: "login",
         element: <Login />,
       },
       {
@@ -66,8 +68,12 @@ const router = createBrowserRouter([
         element: <CartSection />,
       },
       {
-        path: "product/:productId",
+        path: "products/:productId",
         element: <ProductDetail />,
+      },
+      {
+        path: "search",
+        element: <SearchResults />,
       },
     ],
   },
@@ -76,7 +82,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
-      <RouterProvider router={router} />
+      <SnackbarProvider>
+        <RouterProvider router={router} />
+      </SnackbarProvider>
     </Provider>
   </React.StrictMode>
 );

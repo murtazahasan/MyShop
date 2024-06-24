@@ -7,7 +7,7 @@ import ProductDetail from "../pages/ProductDetail";
 import CartSection from "../pages/CartSection";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
-
+import SearchResults from "./SearchResults";
 import CartBox from "./CartBox";
 import Header from "./Header";
 import Bag from "./Bag";
@@ -27,4 +27,5 @@ export {
   ProductDetail,
   Footer,
   Login,
+  SearchResults,
 };

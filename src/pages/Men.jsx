@@ -1,163 +1,46 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
-import shirtData from "../components/all-json/shirts.json";
-import watchData from "../components/all-json/watches.json";
-import shoeData from "../components/all-json/shoes.json";
-import { addToBag, removeFromBag } from "../reducers/bagSlice";
-import { AiFillDelete } from "react-icons/ai";
-import { GrAddCircle } from "react-icons/gr";
-import { RxEyeOpen } from "react-icons/rx";
-
-const ProductCard = ({
-  id,
-  name,
-  image,
-  description,
-  price,
-  discountedPrice,
-  discount,
-  type,
-}) => {
-  const dispatch = useDispatch();
-  const inBag = useSelector((state) =>
-    state.Bag.items.find((item) => item.id === id)
-  );
-  const navigate = useNavigate();
-
-  const handleAddToBag = () => {
-    dispatch(
-      addToBag({
-        id,
-        name,
-        image,
-        description,
-        discountedPrice,
-        discount,
-        price,
-        type,
-      })
-    );
-  };
-
-  const handleRemoveFromBag = () => {
-    dispatch(removeFromBag(id));
-  };
-
-  const handleProductClick = () => {
-    navigate(`/product/${id}`);
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
-  return (
-    <div className="col-md-3 col-6">
-      <div className="card mb-3">
-        <img src={image} className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <p className="card-text">{description}</p>
-          <p>
-            <span style={{ textDecoration: "line-through" }}>Rs.{price}</span>{" "}
-            <span className="fw-bold">Rs.{discountedPrice}</span>{" "}
-            <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
-          </p>
-          {inBag ? (
-            <button onClick={handleRemoveFromBag} className="btn btn-danger">
-              Remove <AiFillDelete className="mb-1" />
-            </button>
-          ) : (
-            <button onClick={handleAddToBag} className="btn btn-success">
-              Add to Cart <GrAddCircle className="mb-1" />
-            </button>
-          )}
-          <button
-            onClick={handleProductClick}
-            className="btn btn-primary my-2 m-lg-2"
-          >
-            View Detail <RxEyeOpen className="mb-1 " />
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { NavLink } from "react-router-dom";
+import ProductCard from "../components/ProductCard";
 
 function Men() {
-  const navigate = useNavigate();
+  const [shirts, setShirts] = useState([]);
+  const [watches, setWatches] = useState([]);
+  const [shoes, setShoes] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const handleMenButtonClick = () => {
-    navigate("/MEN");
-    scrollToTop();
-  };
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        const shirtResponse = await axios.get(
+          "http://localhost:4000/products?category=men-shirts"
+        );
+        const watchResponse = await axios.get(
+          "http://localhost:4000/products?category=men-watches"
+        );
+        const shoeResponse = await axios.get(
+          "http://localhost:4000/products?category=men-shoes"
+        );
+        setShirts(shirtResponse.data.products);
+        setWatches(watchResponse.data.products);
+        setShoes(shoeResponse.data.products);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+    fetchProducts();
+  }, []);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
 
   return (
     <>
-      {/* Your Carousel Code */}
-      <div
-        id="carouselExampleAutoplaying"
-        className="carousel slide pt-5"
-        data-bs-ride="carousel"
-        data-bs-interval="1500"
-      >
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img
-              src="bm1.jpeg"
-              className="d-block w-100"
-              style={{ maxHeight: "80vh" }}
-              alt="..."
-            />
-          </div>
-          <div className="carousel-item">
-            <img
-              src="bm2.jpeg"
-              className="d-block w-100"
-              style={{ maxHeight: "80vh" }}
-              alt="..."
-            />
-          </div>
-          <div className="carousel-item">
-            <img
-              src="bm3.jpeg"
-              className="d-block w-100"
-              style={{ maxHeight: "80vh" }}
-              alt="..."
-            />
-          </div>
-        </div>
-        <button
-          className="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleAutoplaying"
-          data-bs-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div>
-
       {/* ShirtCard */}
       <div
         className="container-fluid py-5"
@@ -172,8 +55,13 @@ function Men() {
             Premium Shirts
           </h1>
           <div className="row">
-            {shirtData.map((product, index) => (
-              <ProductCard key={index} {...product} type="shirt" />
+            {shirts.map((product) => (
+              <ProductCard
+                key={product._id}
+                {...product}
+                id={product._id}
+                type="shirt"
+              />
             ))}
           </div>
         </div>
@@ -193,41 +81,14 @@ function Men() {
             Premium Watches
           </h1>
           <div className="row">
-            {watchData.map((product, index) => (
-              <ProductCard key={index} {...product} type="watch" />
+            {watches.map((product) => (
+              <ProductCard
+                key={product._id}
+                {...product}
+                id={product._id}
+                type="watch"
+              />
             ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Special Edition Section */}
-      <div
-        className="container-fluid"
-        style={{ backgroundImage: `url("aa2.jpg")` }}
-      >
-        <div className="px-4 py-5 text-center " style={{ height: "30rem" }}>
-          <h1 className="display-5 pt-5 fw-bold text-body-emphasis">
-            Special Edition
-          </h1>
-          <div className="col-lg-6 mx-auto">
-            <p
-              data-aos="zoom-in-up"
-              data-aos-duration="1500"
-              className="lead mb-4"
-            >
-              orem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
-            </p>
-            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
-              <button
-                data-aos="zoom-in"
-                data-aos-duration="1500"
-                type="button"
-                className="btn  btn-light   btn-lg px-4 gap-3"
-              >
-                SHOP NOW
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -246,8 +107,13 @@ function Men() {
             Premium Shoes
           </h1>
           <div className="row">
-            {shoeData.map((product, index) => (
-              <ProductCard key={index} {...product} type="watch" />
+            {shoes.map((product) => (
+              <ProductCard
+                key={product._id}
+                {...product}
+                id={product._id}
+                type="shoe"
+              />
             ))}
           </div>
         </div>
@@ -255,7 +121,7 @@ function Men() {
           <div className="row">
             <span className="d-flex gap-3 ps-4 py-3">
               <button
-                className="btn  btn-outline-secondary d-inline-flex align-items-center"
+                className="btn btn-outline-secondary d-inline-flex align-items-center"
                 type="button"
               >
                 <NavLink

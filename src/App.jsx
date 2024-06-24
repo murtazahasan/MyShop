@@ -18,12 +18,17 @@ import {
 import { Outlet } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useDispatch } from "react-redux";
+import { loadUserFromToken } from "./reducers/authSlice";
 
 function App() {
+  const dispatch = useDispatch();
+
   useEffect(() => {
     AOS.init();
     AOS.refresh();
-  }, []);
+    dispatch(loadUserFromToken());
+  }, [dispatch]);
 
   return (
     <>
