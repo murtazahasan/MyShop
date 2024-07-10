@@ -10,12 +10,14 @@
 .bg {
   background-color: #007bff !important;
   border-radius: 12px !important;
-  padding-bottom: 4px !important;
+  padding-bottom: 3px !important;
   color: #ffffff;
 }
 .bg2 {
   background-color: #d5ded43d !important;
   border-radius: 12px;
+  padding-bottom: 3px !important;
+
 }
 
 .hoverSignOut:hover {
