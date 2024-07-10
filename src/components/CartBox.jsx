@@ -14,7 +14,7 @@ function CartBox() {
   };
 
   return (
-    <div className="position-fixed top-50 end-0 mt-3">
+    <div className="position-fixed top-50 end-0 mt-3" >
       <div className="bg-white rounded-5 d-inline-flex p-1 shadow-lg">
         <Link
           to="/my-cart"

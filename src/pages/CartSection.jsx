@@ -39,19 +39,34 @@ function CartSection() {
           {cartItems.map((item) => {
             console.log("Item details:", item);
             return (
-              <div className="card mb-3" key={item.productId}>
+              <div
+                className="card mb-3 "
+                style={{ position: "inherit" }}
+                key={item.productId}
+              >
                 <div className="row g-0">
                   <div className="col-md-4">
                     <img
-                      src={item.imageUrl}
-                      className="img-fluid rounded-start"
+                      src={item.image}
+                      className="img-fluid rounded mx-3 mt-3 "
                       alt={item.name}
                     />
                   </div>
-                  <div className="col-md-8">
+                  <div className="col-md-8 px-3">
                     <div className="card-body">
                       <h5 className="card-title">{item.name}</h5>
-                      <p className="card-text">Price: Rs.{item.price}</p>
+                      <p className="card-text">{item.description}</p>
+                      <p>
+                        <span className="fw-bold">
+                          Rs.{item.discountPrice}{" "}
+                        </span>
+                        <span style={{ textDecoration: "line-through" }}>
+                          Rs.{item.price}
+                        </span>
+                        <span style={{ color: "#b84444" }}>
+                          ({item.discountPercentage}% OFF)
+                        </span>
+                      </p>
                       <div className="d-flex align-items-center">
                         <button
                           className="btn btn-secondary"
@@ -80,7 +95,7 @@ function CartSection() {
                       </div>
                     </div>
                     <button
-                      className="btn btn-danger my-3"
+                      className="btn btn-danger my-3 mx-3"
                       onClick={() => handleRemoveFromCart(item.productId)}
                     >
                       Remove

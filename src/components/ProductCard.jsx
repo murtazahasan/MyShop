@@ -48,7 +48,13 @@ const ProductCard = ({
     console.log("Adding product with ID:", _id);
     const productData = {
       productId: _id,
+      description: description,
       quantity: 1,
+      image: imageUrl,
+      name: name,
+      price: price,
+      discountPrice: discountPrice,
+      discountPercentage: discountPercentage,
     };
     dispatch(addToCart(productData));
     dispatch(saveCartToDatabase(productData));
@@ -81,7 +87,7 @@ const ProductCard = ({
           <p className="card-text">{description}</p>
           <p>
             <span style={{ textDecoration: "line-through" }}>Rs.{price}</span>
-            <span className="fw-bold">Rs.{discountPrice}</span>
+            <span className="fw-bold mx-2">Rs.{discountPrice}</span>
             <span style={{ color: "#b84444" }}>
               ({discountPercentage}% OFF)
             </span>
