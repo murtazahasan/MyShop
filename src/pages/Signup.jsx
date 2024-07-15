@@ -20,7 +20,7 @@ const SignUp = () => {
       enqueueSnackbar("Sign up successful! Please sign in.", {
         variant: "success",
       });
-      navigate("/sign-in");
+      navigate("/login");
     } catch (err) {
       enqueueSnackbar(err.response.data.message || "Sign up failed", {
         variant: "error",

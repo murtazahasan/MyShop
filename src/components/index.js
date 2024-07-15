@@ -10,8 +10,8 @@ import Login from "../pages/Login";
 import SearchResults from "./SearchResults";
 import CartBox from "./CartBox";
 import Header from "./Header";
-import Bag from "./Bag";
 import Footer from "./Footer";
+import CheckoutSuccess from "../pages/CheckoutSuccess";
 
 export {
   Header,
@@ -21,11 +21,11 @@ export {
   About,
   Contact,
   Signup,
-  Bag,
   CartBox,
   CartSection,
   ProductDetail,
   Footer,
   Login,
   SearchResults,
+  CheckoutSuccess,
 };

@@ -73,6 +73,7 @@ const SearchResults = () => {
             />
             <div className="card-body mb-2">
               <h5 className="card-title">{product.name}</h5>
+              <p className=" ">{product.description}</p>
               <Link to={`/products/${product._id}`} className="btn btn-primary">
                 View Details
               </Link>

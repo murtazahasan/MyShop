@@ -20,13 +20,13 @@ import {
   About,
   Contact,
   Signup,
-  Bag,
   CartBox,
   CartSection,
   ProductDetail,
   Footer,
   Login,
   SearchResults,
+  CheckoutSuccess,
 } from "./components/index";
 import { SnackbarProvider } from "notistack";
 
@@ -74,6 +74,10 @@ const router = createBrowserRouter([
       {
         path: "search",
         element: <SearchResults />,
+      },
+      {
+        path: "checkout-success",
+        element: <CheckoutSuccess />,
       },
     ],
   },

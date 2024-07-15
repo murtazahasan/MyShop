@@ -8,7 +8,6 @@ import {
   About,
   Contact,
   Signup,
-  Bag,
   CartBox,
   CartSection,
   ProductDetail,

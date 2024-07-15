@@ -41,6 +41,66 @@ function Men() {
 
   return (
     <>
+      {/* Carousel Code */}
+      <div
+        id="carouselExampleAutoplaying"
+        className="carousel slide pt-5"
+        data-bs-ride="carousel"
+        data-bs-interval="1500"
+        style={{ marginTop: "30px" }}
+      >
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img
+              src="bm1.jpeg"
+              className="d-block w-100"
+              style={{ maxHeight: "80vh" }}
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="bm2.jpeg"
+              className="d-block w-100"
+              style={{ maxHeight: "80vh" }}
+              alt="..."
+            />
+          </div>
+          <div className="carousel-item">
+            <img
+              src="bm3.jpeg"
+              className="d-block w-100"
+              style={{ maxHeight: "80vh" }}
+              alt="..."
+            />
+          </div>
+        </div>
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
+
       {/* ShirtCard */}
       <div
         className="container-fluid py-5"
@@ -89,6 +149,38 @@ function Men() {
                 type="watch"
               />
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Special Edition Section */}
+      <div
+        className="container-fluid"
+        style={{ backgroundImage: `url("aa2.jpg")` }}
+      >
+        <div className="px-4 py-5 text-center " style={{ height: "30rem" }}>
+          <h1 className="display-5 pt-5 fw-bold text-body-emphasis">
+            Special Edition
+          </h1>
+          <div className="col-lg-6 mx-auto">
+            <p
+              data-aos="zoom-in-up"
+              data-aos-duration="1500"
+              className="lead mb-4"
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+              tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            </p>
+            <div className="d-grid gap-2 d-sm-flex justify-content-sm-center">
+              <button
+                data-aos="zoom-in"
+                data-aos-duration="1500"
+                type="button"
+                className="btn  btn-light   btn-lg px-4 gap-3"
+              >
+                SHOP NOW
+              </button>
+            </div>
           </div>
         </div>
       </div>
