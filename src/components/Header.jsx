@@ -4,7 +4,7 @@ import logo from "../assets/logo1.png";
 import styles from "./Header.module.css";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { signOut } from "../reducers/authSlice";
+import { signOutAndClearCart } from "../reducers/authSlice";
 import { useSnackbar } from "notistack";
 
 function Header() {
@@ -22,7 +22,7 @@ function Header() {
   };
 
   const handleSignOut = () => {
-    dispatch(signOut());
+    dispatch(signOutAndClearCart());
     enqueueSnackbar("Signed out successfully", { variant: "info" });
   };
 
@@ -102,7 +102,10 @@ function Header() {
               </li>
             </ul>
 
-            <form className="d-flex align-items-center ms-2" onSubmit={handleSearch}>
+            <form
+              className="d-flex align-items-center ms-2"
+              onSubmit={handleSearch}
+            >
               <input
                 type="text"
                 className="form-control"
@@ -110,7 +113,11 @@ function Header() {
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search products..."
               />
-              <button type="submit" className="btn btn-outline-secondary ms-1"style={{ padding: "revert" }}>
+              <button
+                type="submit"
+                className="btn btn-outline-secondary ms-1"
+                style={{ padding: "revert" }}
+              >
                 <MdSearch className="fs-5" />
               </button>
               {isAuthenticated ? (

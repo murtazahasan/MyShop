@@ -40,10 +40,10 @@ function CartSection() {
       0
     );
   };
-console.log(cartItems)
+
   const handleCheckout = async () => {
     try {
-      const response = await fetch("http://localhost:4000/orders", {
+      const response = await fetch("http://localhost:4000/orders/new-order", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -204,7 +204,7 @@ console.log(cartItems)
                     </div>
                     <div className="mb-3">
                       <label htmlFor="phoneNumber" className="form-label">
-                      Phone Number
+                        Phone Number
                       </label>
                       <input
                         type="text"
@@ -217,7 +217,7 @@ console.log(cartItems)
                     </div>
                     <div className="mb-3">
                       <label htmlFor="email" className="form-label">
-                      email
+                        email
                       </label>
                       <input
                         type="text"

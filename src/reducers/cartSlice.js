@@ -46,16 +46,30 @@ const cartSlice = createSlice({
       }
       saveCartToLocalStorage(state.items);
     },
-    addFetchedCart: (state, action) => {
-      console.log("Adding fetched cart items to state:", action.payload);
-      state.items = action.payload;
+    clearCart: (state) => {
+      console.log("Clearing cart");
+      state.items = [];
       saveCartToLocalStorage(state.items);
     },
   },
 });
 
-export const { addToCart, removeFromCart, updateQuantity, addFetchedCart } =
-  cartSlice.actions;
+export const { addToCart, removeFromCart, updateQuantity, clearCart } = cartSlice.actions;
+
+export const clearCartFromDatabase = () => async (dispatch, getState) => {
+  const { token } = getState().auth;
+  try {
+    console.log("Clearing cart from database");
+    await axios.delete("http://localhost:4000/user/cart/clear", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    dispatch(clearCart());
+  } catch (error) {
+    console.error("Failed to clear cart from database:", error);
+  }
+};
 
 export const saveCartToDatabase =
   (productData) => async (dispatch, getState) => {

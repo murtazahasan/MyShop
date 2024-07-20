@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { addFetchedCart } from "./cartSlice";
 
 const authSlice = createSlice({
   name: "auth",
@@ -39,6 +38,20 @@ const authSlice = createSlice({
 
 export const { signIn, signOut, loadUser } = authSlice.actions;
 
+export const signOutAndClearCart = () => async (dispatch, getState) => {
+  const { token } = getState().auth;
+  try {
+    await axios.delete("http://localhost:4000/user/cart/clear", {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    dispatch(signOut());
+  } catch (error) {
+    console.error("Failed to clear cart and sign out:", error);
+  }
+};
+
 export const signInAndFetchCart = (credentials) => async (dispatch) => {
   try {
     console.log("Signing in with credentials:", credentials);
@@ -48,16 +61,8 @@ export const signInAndFetchCart = (credentials) => async (dispatch) => {
     );
     const { user, token } = response.data;
     dispatch(signIn({ user, token }));
-
-    console.log("Fetching cart after sign in");
-    const cartResponse = await axios.get("http://localhost:4000/user/cart", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    dispatch(addFetchedCart(cartResponse.data));
   } catch (error) {
-    console.error("Failed to sign in and fetch cart:", error);
+    console.error("Failed to sign in:", error);
   }
 };
 
@@ -76,14 +81,6 @@ export const loadUserFromToken = () => async (dispatch) => {
       );
       const user = response.data.user;
       dispatch(loadUser({ user, token }));
-
-      console.log("Fetching cart after loading user from token");
-      const cartResponse = await axios.get("http://localhost:4000/user/cart", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      dispatch(addFetchedCart(cartResponse.data));
     } catch (error) {
       console.error("Failed to load user from token:", error);
       dispatch(signOut());
