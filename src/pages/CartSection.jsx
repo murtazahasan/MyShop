@@ -7,6 +7,7 @@ import {
   removeCartItemFromDatabase,
   updateCartItemInDatabase,
 } from "../reducers/cartSlice";
+import { createOrder } from "../reducers/orderSlice";
 
 function CartSection() {
   const cartItems = useSelector((state) => state.cart.items);
@@ -42,29 +43,32 @@ function CartSection() {
   };
 
   const handleCheckout = async () => {
+    const user = localStorage.getItem("user");
+    const parsedUser = user ? JSON.parse(user)?._id : null;
+    console.log("Retrieved userId from localStorage:", parsedUser);
+
+
+console.log({
+  userId:parsedUser,
+  items: cartItems,
+  shippingAddress: userDetails,
+  totalAmount: getTotalAmount(),
+})
     try {
-      const response = await fetch("http://localhost:4000/orders/new-order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify({
-          userId: localStorage.getItem("userId"),
+      await dispatch(
+        createOrder({
+          userId:parsedUser,
           items: cartItems,
           shippingAddress: userDetails,
           totalAmount: getTotalAmount(),
-        }),
-      });
+        })
+      ).unwrap(); // Using unwrap() to handle async thunks in a try-catch block
 
-      if (response.ok) {
-        cartItems.forEach((item) =>
-          dispatch(removeFromCart({ productId: item.productId }))
-        ); // Clear cart
-        navigate("/checkout-success");
-      } else {
-        console.error("Checkout failed!");
-      }
+      cartItems.forEach((item) =>
+        dispatch(removeFromCart({ productId: item.productId }))
+      );
+
+      navigate("/checkout-success");
     } catch (error) {
       console.error("Checkout error:", error);
     }
@@ -217,7 +221,7 @@ function CartSection() {
                     </div>
                     <div className="mb-3">
                       <label htmlFor="email" className="form-label">
-                        email
+                        Email
                       </label>
                       <input
                         type="text"

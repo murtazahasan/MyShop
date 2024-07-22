@@ -60,6 +60,7 @@ export const signInAndFetchCart = (credentials) => async (dispatch) => {
       credentials
     );
     const { user, token } = response.data;
+    localStorage.setItem("userId", user._id);
     dispatch(signIn({ user, token }));
   } catch (error) {
     console.error("Failed to sign in:", error);
