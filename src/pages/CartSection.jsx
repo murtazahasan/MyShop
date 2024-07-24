@@ -47,17 +47,16 @@ function CartSection() {
     const parsedUser = user ? JSON.parse(user)?._id : null;
     console.log("Retrieved userId from localStorage:", parsedUser);
 
-
-console.log({
-  userId:parsedUser,
-  items: cartItems,
-  shippingAddress: userDetails,
-  totalAmount: getTotalAmount(),
-})
+    console.log({
+      userId: parsedUser,
+      items: cartItems,
+      shippingAddress: userDetails,
+      totalAmount: getTotalAmount(),
+    });
     try {
       await dispatch(
         createOrder({
-          userId:parsedUser,
+          userId: parsedUser,
           items: cartItems,
           shippingAddress: userDetails,
           totalAmount: getTotalAmount(),
