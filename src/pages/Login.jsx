@@ -32,8 +32,8 @@ const Login = () => {
 
   return (
     <div
-      className="container d-flex align-items-center justify-content-center vh-100"
-      style={{ marginTop: "100px" }}
+      className="container mb-5 d-flex align-items-center justify-content-center vh-100"
+      style={{ marginTop: "150px" }}
     >
       <div className="card p-4" style={{ maxWidth: "400px", width: "100%" }}>
         <h2 className="text-center mb-4">Login</h2>
