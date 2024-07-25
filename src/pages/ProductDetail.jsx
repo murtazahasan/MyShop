@@ -60,6 +60,10 @@ const ProductDetail = () => {
       navigate("/login");
       return;
     }
+    if (product.stock <= 0) {
+      enqueueSnackbar("This product is out of stock.", { variant: "error" });
+      return;
+    }
     console.log("Adding product with ID:", productId);
     const productData = {
       productId: product._id,
@@ -92,6 +96,16 @@ const ProductDetail = () => {
     return <div className="mt-5">No product found.</div>;
   }
 
+  const stockStatus = () => {
+    if (product.stock <= 0) {
+      return <span className="text-danger">Out of Stock</span>;
+    } else if (product.stock <= 4) {
+      return <span className="text-warning pe-3">Only Few Left !</span>;
+    } else {
+      return null;
+    }
+  };
+
   return (
     <>
       <h1 className="text-center mb-5 fw-bold" style={{ marginTop: "100px" }}>
@@ -115,15 +129,16 @@ const ProductDetail = () => {
               ({product?.discountPercentage}% OFF)
             </span>
           </p>
+          {stockStatus()}
           {inCart ? (
             <button onClick={handleRemoveFromCart} className="btn btn-danger">
               Remove <AiFillDelete className="mb-1" />
             </button>
-          ) : (
+          ) : product.stock > 0 ? (
             <button onClick={handleAddToCart} className="btn btn-success">
               Add to Cart <GrAddCircle className="mb-1" />
             </button>
-          )}
+          ) : null}
         </div>
       </div>
       <button className="btn btn-dark ms-4 mb-5" type="button">
