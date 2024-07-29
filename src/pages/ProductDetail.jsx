@@ -111,7 +111,7 @@ const ProductDetail = () => {
       <h1 className="text-center mb-5 fw-bold" style={{ marginTop: "100px" }}>
         Product Detail Page
       </h1>
-      
+
       <div className="card p-3 mb-3 me-3 ms-3 position-static">
         <div className="row">
           <div className="col-md-6">
@@ -120,39 +120,23 @@ const ProductDetail = () => {
               className="carousel slide"
               data-ride="carousel"
             >
-              <ol className="carousel-indicators custom-dots">
-                {product?.imageUrl.map((_, index) => (
-                  <li
-                    key={index}
-                    data-target="#productCarousel"
-                    data-slide-to={index}
-                    className={index === 0 ? "active" : ""}
-                    style={{
-                      backgroundColor: "white",
-                      borderRadius: "50%",
-                      width: "10px",
-                      height: "10px",
-                      display: "inline-block",
-                      margin: "0 5px",
-                    }}
-                  />
-                ))}
-              </ol>
-
               <div className="carousel-inner">
                 {product?.imageUrl.map((image, index) => (
                   <div
                     key={index}
                     className={`carousel-item ${index === 0 ? "active" : ""}`}
                   >
-                    <img
-                      src={image}
-                      className="d-block w-100"
-                      alt={`Product Image ${index + 1}`}
-                    />
+                    <a href={image} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={image}
+                        className="d-block w-100"
+                        alt={`Product Image ${index + 1}`}
+                      />
+                    </a>
                   </div>
                 ))}
               </div>
+
               <a
                 className="carousel-control-prev"
                 href="#productCarousel"
