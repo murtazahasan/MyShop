@@ -120,13 +120,18 @@ const ProductDetail = () => {
               className="carousel slide"
               data-ride="carousel"
             >
-              <div className="carousel-inner">
+                     <div className="carousel-inner">
                 {product?.imageUrl.map((image, index) => (
                   <div
                     key={index}
                     className={`carousel-item ${index === 0 ? "active" : ""}`}
                   >
-                    <a href={image} target="_blank" rel="noopener noreferrer">
+                    <a
+                      href={image}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="d-block w-100 carousel-image-link"
+                    >
                       <img
                         src={image}
                         className="d-block w-100"
@@ -136,6 +141,25 @@ const ProductDetail = () => {
                   </div>
                 ))}
               </div>
+
+              <ol className="carousel-indicators">
+                {product?.imageUrl.map((_, index) => (
+                  <li
+                    key={index}
+                    data-target="#productCarousel"
+                    data-slide-to={index}
+                    className={index === 0 ? "active" : ""}
+                    style={{
+                      backgroundColor: 'white',
+                      borderRadius: '50%',
+                      width: '10px',
+                      height: '10px',
+                      display: 'inline-block',
+                      margin: '0 5px',
+                    }}
+                  />
+                ))}
+              </ol>
 
               <a
                 className="carousel-control-prev"
