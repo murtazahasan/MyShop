@@ -19,6 +19,7 @@ const ProductCard = ({
   price,
   discountPrice,
   discountPercentage,
+  stock,
 }) => {
   const dispatch = useDispatch();
   const inCart = useSelector((state) =>
@@ -45,12 +46,16 @@ const ProductCard = ({
       navigate("/login");
       return;
     }
+    if (stock <= 0) {
+      enqueueSnackbar("This product is out of stock.", { variant: "error" });
+      return;
+    }
     console.log("Adding product with ID:", _id);
     const productData = {
       productId: _id,
       description: description,
       quantity: 1,
-      image: imageUrl,
+      image: imageUrl[0],
       name: name,
       price: price,
       discountPrice: discountPrice,
@@ -74,6 +79,14 @@ const ProductCard = ({
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const stockStatus = () => {
+    if (stock <= 0) {
+      return <span className="text-danger text-small">Out of Stock</span>;
+    } else {
+      return null;
+    }
+  };
+
   return (
     <div className="col-md-3 col-6">
       <div
@@ -81,7 +94,8 @@ const ProductCard = ({
         onClick={handleProductClick}
         style={{ cursor: "pointer" }}
       >
-        <img src={imageUrl} className="card-img-top" alt={name} />
+        <img src={imageUrl[0]} className="card-img-top" alt={name} />
+
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
           <p className="card-text">{description}</p>
@@ -92,15 +106,18 @@ const ProductCard = ({
               ({discountPercentage}% OFF)
             </span>
           </p>
-          {inCart ? (
-            <button onClick={handleRemoveFromCart} className="btn btn-danger">
-              Remove <AiFillDelete className="mb-1" />
-            </button>
-          ) : (
-            <button onClick={handleAddToCart} className="btn btn-success">
-              Add to Cart <GrAddCircle className="mb-1" />
-            </button>
-          )}
+          <div className="d-flex justify-content-between">
+            {inCart ? (
+              <button onClick={handleRemoveFromCart} className="btn btn-danger">
+                Remove <AiFillDelete className="mb-1" />
+              </button>
+            ) : stock > 0 ? (
+              <button onClick={handleAddToCart} className="btn btn-success">
+                Add to Cart <GrAddCircle className="mb-1" />
+              </button>
+            ) : null}
+            {stockStatus()}
+          </div>
         </div>
       </div>
     </div>

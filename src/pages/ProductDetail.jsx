@@ -69,7 +69,7 @@ const ProductDetail = () => {
       productId: product._id,
       description: product.description,
       quantity: 1,
-      image: product.imageUrl,
+      image: product.imageUrl[0],
       name: product.name,
       price: product.price,
       discountPrice: product.discountPrice,
@@ -111,12 +111,74 @@ const ProductDetail = () => {
       <h1 className="text-center mb-5 fw-bold" style={{ marginTop: "100px" }}>
         Product Detail Page
       </h1>
+      
       <div className="card p-3 mb-3 me-3 ms-3 position-static">
-        <img
-          src={product?.imageUrl}
-          className="card-img-top mx-3 w-25"
-          alt={product?.name}
-        />
+        <div className="row">
+          <div className="col-md-6">
+            <div
+              id="productCarousel"
+              className="carousel slide"
+              data-ride="carousel"
+            >
+              <ol className="carousel-indicators custom-dots">
+                {product?.imageUrl.map((_, index) => (
+                  <li
+                    key={index}
+                    data-target="#productCarousel"
+                    data-slide-to={index}
+                    className={index === 0 ? "active" : ""}
+                    style={{
+                      backgroundColor: "white",
+                      borderRadius: "50%",
+                      width: "10px",
+                      height: "10px",
+                      display: "inline-block",
+                      margin: "0 5px",
+                    }}
+                  />
+                ))}
+              </ol>
+
+              <div className="carousel-inner">
+                {product?.imageUrl.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`carousel-item ${index === 0 ? "active" : ""}`}
+                  >
+                    <img
+                      src={image}
+                      className="d-block w-100"
+                      alt={`Product Image ${index + 1}`}
+                    />
+                  </div>
+                ))}
+              </div>
+              <a
+                className="carousel-control-prev"
+                href="#productCarousel"
+                role="button"
+                data-slide="prev"
+              >
+                <span
+                  className="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+              </a>
+              <a
+                className="carousel-control-next"
+                href="#productCarousel"
+                role="button"
+                data-slide="next"
+              >
+                <span
+                  className="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div className="card-body mb-2">
           <h5 className="card-title">{product?.name}</h5>
           <p className="card-text">{product?.description}</p>
