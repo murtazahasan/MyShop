@@ -30,7 +30,7 @@ function Men() {
   if (error) return <div>Error: {error}</div>;
 
   // Extract the desired shirts
-  const selectedShirts = shirts.slice(1, 2).concat(shirts.slice(2, 3));
+  const selectedShirts = [shirts[0], shirts[3], shirts[2], shirts[5]];
 
   return (
     <>
