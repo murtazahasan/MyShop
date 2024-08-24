@@ -41,13 +41,13 @@ const ProductCard = ({
       <div className="card shadow-sm mb-3 me-5 py-5 px-3 ms-2 d-flex flex-row">
         <img
           src={image}
-          className="card-img-left w-25"
+          className="card-img-left"
           alt="..."
           onClick={() => handleProductClick(id)}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer" , width: "200px" }}
         />
         <div className="card-body d-flex flex-column justify-content-between">
-          <div>
+          <div className="ms-3">
             <h5
               className="card-title"
               onClick={() => handleProductClick(id)}
@@ -65,13 +65,15 @@ const ProductCard = ({
             <p>
               <span style={{ textDecoration: "line-through" }}>Rs.{price}</span>
               <span
-                className="fw-bold"
+                className="fw-bold mx-1"
                 onClick={() => handleProductClick(id)}
                 style={{ cursor: "pointer" }}
               >
                 Rs.{discountedPrice}
               </span>
-              <span style={{ color: "#b84444" }}>{discount}% OFF</span>
+              <span style={{ color: "#b84444", fontSize: "10px" }}>
+                {discount}% OFF
+              </span>
             </p>
           </div>
           <div>
@@ -80,7 +82,7 @@ const ProductCard = ({
                 Remove <AiFillDelete className="mb-1" />
               </button>
             ) : (
-              <button onClick={handleAddToBag} className="btn btn-success">
+              <button onClick={handleAddToBag} className="btn btn-success ms-3">
                 Add to Cart <GrAddCircle className="mb-1 " />
               </button>
             )}
