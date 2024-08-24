@@ -15,7 +15,10 @@ function CartSection() {
   };
 
   const getTotalAmount = () => {
-    return itemsInBag.reduce((total, item) => total + (item.discountedPrice * item.quantity), 0);
+    return itemsInBag.reduce(
+      (total, item) => total + item.discountedPrice * item.quantity,
+      0
+    );
   };
 
   return (
@@ -39,16 +42,22 @@ function CartSection() {
                 <p className="mb-1">{item.description}</p>
                 <div className="d-flex justify-content-between align-items-center">
                   <div>
-                    <span className="text-muted me-2" style={{ textDecoration: "line-through" }}>
+                    <span
+                      className="text-muted me-2"
+                      style={{ textDecoration: "line-through" }}
+                    >
                       Original Price: RS{item.price}
                     </span>
-                    <span className="text-success fw-bold">
-                      Discounted Price: RS{item.discountedPrice}
-                    </span>
+                    <p className=" fw-bold">
+                      Discounted Price:
+                      <span className="text-success"> RS.{item.discountedPrice} </span>
+                    </p>
                     <div className="quantity-controls">
                       <button
                         className="btn btn-secondary"
-                        onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                        onClick={() =>
+                          handleQuantityChange(item.id, item.quantity - 1)
+                        }
                         disabled={item.quantity <= 1}
                       >
                         -
@@ -56,7 +65,9 @@ function CartSection() {
                       <span className="quantity m-2">{item.quantity}</span>
                       <button
                         className="btn btn-secondary"
-                        onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
+                        onClick={() =>
+                          handleQuantityChange(item.id, item.quantity + 1)
+                        }
                       >
                         +
                       </button>
@@ -75,9 +86,17 @@ function CartSection() {
         </div>
       </div>
 
-      <div className=" border-top py-4 px-4 ">
-        <p>Total Amount: ${getTotalAmount()}</p>
-        <button className=" btn btn-primary float-end">Purchase Now</button>
+      <div className=" border-top mt-5 py-4 px-4 ">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
+          <p style={{ marginBottom: 0 }}>Total Amount: Rs.{getTotalAmount()}</p>
+          <button className="btn btn-primary">Purchase Now</button>
+        </div>
       </div>
     </div>
   );

@@ -8,6 +8,7 @@ import shoeData from "../components/all-json/shoes.json";
 import fshirtData from "../components/all-json/femaleShirts.json";
 import bagData from "../components/all-json/femaleBags.json";
 import fshoeData from "../components/all-json/femaleShoes.json";
+import ProductCard from "../components/ProductCard";
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -57,34 +58,24 @@ const ProductDetail = () => {
     return <div className="mt-5">No product found.</div>;
   }
 
-  const { name, image, description, discountedPrice, discount, price } =
+  const { id, name, image, description, discountedPrice, discount, price } =
     product;
 
-  // console.log(image)
   return (
     <>
-      <h1 className=" text-center mb-5 fw-bold" style={{ marginTop: "100px" }}>
+      <h1 className="text-center mb-5 fw-bold" style={{ marginTop: "100px" }}>
         Product Detail Page
       </h1>
-      <div className="card p-3 mb-3 me-3 ms-3 position-static">
-        <img
-          src={image}
-          className="card-img-top w-25"
-          alt="..."
-        />
-        <div className="card-body mb-2">
-          <h5 className="card-title">{name}</h5>
-          <p className="card-text">{description}</p>
-          <p>
-            <span className="fw-bold">Rs.{price} </span>
-            <span style={{ textDecoration: "line-through" }}>
-              Rs.{discountedPrice}
-            </span>
-            <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
-          </p>
-        </div>
-      </div>
-      <button className="btn btn-dark ms-4 mb-5" type="button">
+      <ProductCard
+        id={id}
+        image={image}
+        name={name}
+        description={description}
+        price={price}
+        discountedPrice={discountedPrice}
+        discount={discount}
+      />
+      <button className="btn btn-dark ms-4 mt-5 mb-5" type="button">
         <NavLink
           style={{ textDecoration: "none" }}
           className="text-white"

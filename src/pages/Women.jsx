@@ -7,7 +7,6 @@ import shoeData from "../components/all-json/femaleShoes.json";
 import { addToBag, removeFromBag } from "../reducers/bagSlice";
 import { AiFillDelete } from "react-icons/ai";
 import { GrAddCircle } from "react-icons/gr";
-import { RxEyeOpen } from "react-icons/rx";
 
 const ProductCard = ({
   id,
@@ -52,19 +51,39 @@ const ProductCard = ({
 
   return (
     <div className="col-md-3 col-6">
-      <div
-        className="card mb-3"
-        style={{ cursor: "pointer" }}
-        onClick={handleProductClick}
-      >
-        <img src={image} className="card-img-top" alt="..." />
+      <div className="card shadow-sm mb-3">
+        <img
+          src={image}
+          className="card-img-top"
+          alt="..."
+          onClick={handleProductClick}
+          style={{ cursor: "pointer" }}
+        />
         <div className="card-body">
-          <h5 className="card-title">{name}</h5>
-          <p className="card-text">{description}</p>
+          <h5
+            className="card-title"
+            onClick={handleProductClick}
+            style={{ cursor: "pointer" }}
+          >
+            {name}
+          </h5>
+          <p
+            className="card-text"
+            onClick={handleProductClick}
+            style={{ cursor: "pointer" }}
+          >
+            {description}
+          </p>
           <p>
-            <span style={{ textDecoration: "line-through" }}>Rs.{price}</span>{" "}
-            <span className="fw-bold">Rs.{discountedPrice}</span>
-            <span style={{ color: "#b84444" }}> ({discount}% OFF) </span>
+            <span style={{ textDecoration: "line-through" }}>Rs.{price}</span>
+            <span
+              className="fw-bold"
+              onClick={handleProductClick}
+              style={{ cursor: "pointer" }}
+            >
+              Rs.{discountedPrice}
+            </span>
+            <span style={{ color: "#b84444" }}>{discount}%</span>
           </p>
           {inBag ? (
             <button onClick={handleRemoveFromBag} className="btn btn-danger">
@@ -72,15 +91,9 @@ const ProductCard = ({
             </button>
           ) : (
             <button onClick={handleAddToBag} className="btn btn-success">
-              Add to Cart <GrAddCircle className="mb-1" />
+              Add to Cart <GrAddCircle className="mb-1 " />
             </button>
           )}
-          <button
-            onClick={handleProductClick}
-            className="btn btn-primary my-2 m-lg-2"
-          >
-            View Detail <RxEyeOpen className="mb-1 " />
-          </button>
         </div>
       </div>
     </div>

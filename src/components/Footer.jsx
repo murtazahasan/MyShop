@@ -8,7 +8,7 @@ function Footer() {
         <footer className="text-white py-5 px-5">
           <div className="row ">
             <div className="col-6 col-md-2 ">
-              <h5>Section</h5>
+              <h5 className="fw-bolder text-secondary">Home</h5>
               <ul className="nav flex-column">
                 <li className="nav-item mb-2">
                   <a href="#" className="nav-link p-0 text-white">
@@ -39,7 +39,7 @@ function Footer() {
             </div>
 
             <div className="col-6 col-md-2 mb-3">
-              <h5>Section</h5>
+              <h5 className="fw-bolder text-secondary">Men</h5>
               <ul className="nav flex-column">
                 <li className="nav-item mb-2">
                   <a href="#" className="nav-link p-0 text-white">
@@ -70,7 +70,7 @@ function Footer() {
             </div>
 
             <div className="col-6 col-md-2 mb-3">
-              <h5>Section</h5>
+              <h5 className="fw-bolder text-secondary">Women</h5>
               <ul className="nav flex-column">
                 <li className="nav-item mb-2">
                   <a href="#" className="nav-link p-0 text-white">
